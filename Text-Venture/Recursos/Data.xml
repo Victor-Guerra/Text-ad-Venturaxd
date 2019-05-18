@@ -17,10 +17,10 @@
     </nashville>
     <dc>
     </dc>
-    <new-york>
-    </new-york>
+    <boston>
+    </boston>
     <chicago>
     </chicago>
-    <!-- hay que ponerle un par de ciudades extra al original creo, le puse washington d.c. y new york-->
+    <!-- hay que ponerle un par de ciudades extra al original creo, le puse washington d.c. y boston-->
   </BigCities>
 </data>
