@@ -26,15 +26,5 @@ namespace Text_Venture
         {
 
         }
-
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GrpPreview_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

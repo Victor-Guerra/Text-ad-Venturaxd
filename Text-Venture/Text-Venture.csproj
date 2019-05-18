@@ -48,10 +48,25 @@
   <ItemGroup>
     <Compile Include="Clases\BigCity.cs" />
     <Compile Include="Clases\Building.cs" />
-    <Compile Include="Clases\Enums.cs" />
+    <Compile Include="Clases\Character.cs" />
+    <Compile Include="Clases\Equipment.cs" />
+    <Compile Include="Clases\Item.cs" />
+    <Compile Include="Clases\Melee.cs" />
+    <Compile Include="Clases\Player.cs" />
+    <Compile Include="Clases\Ranged.cs" />
+    <Compile Include="Clases\Resource.cs" />
+    <Compile Include="Clases\ResourcesClases\Ammo.cs" />
+    <Compile Include="Clases\ResourcesClases\Drink.cs" />
+    <Compile Include="Clases\ResourcesClases\Food.cs" />
+    <Compile Include="Clases\ResourcesClases\Gasoline.cs" />
+    <Compile Include="Clases\ResourcesClases\Medkit.cs" />
+    <Compile Include="Clases\StatusHandler.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Clases\Human.cs" />
     <Compile Include="Clases\Interfaces.cs" />
     <Compile Include="Clases\Location.cs" />
     <Compile Include="Clases\MasterControl.cs" />
+    <Compile Include="Clases\Weapon.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

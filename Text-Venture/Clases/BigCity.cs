@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Text_Adventure.Clases
+namespace Text_Venture.Clases
 {
     class BigCity : Location
     {
@@ -16,7 +16,7 @@ namespace Text_Adventure.Clases
 
         public BigCity(string name, string description, int drop): base (name, description)
         {
-            this.name = name;
+           
         }
     }
 }

@@ -83,6 +83,7 @@
             this.txtBxInput.Name = "txtBxInput";
             this.txtBxInput.Size = new System.Drawing.Size(673, 20);
             this.txtBxInput.TabIndex = 4;
+            
             // 
             // bttnSubmit
             // 
@@ -109,7 +110,7 @@
             this.GrpPreview.TabIndex = 6;
             this.GrpPreview.TabStop = false;
             this.GrpPreview.Text = "Environment";
-            this.GrpPreview.Enter += new System.EventHandler(this.GrpPreview_Enter);
+            
             // 
             // groupBox1
             // 
@@ -124,7 +125,7 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
-            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
+            
             // 
             // groupBox2
             // 

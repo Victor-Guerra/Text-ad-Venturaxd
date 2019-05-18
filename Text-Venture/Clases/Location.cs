@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Text_Adventure.Clases
+namespace Text_Venture.Clases
 {
     abstract class Location
     {

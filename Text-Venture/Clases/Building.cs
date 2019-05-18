@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Text_Adventure.Clases
+namespace Text_Venture.Clases
 {
     class Building : Location
     {
-        private Enums.ETypeBuilding buildingType;
+        private ETypeBuilding buildingType;
         private bool playerIsHere;
         private Dictionary<string, Object> findables;
 
