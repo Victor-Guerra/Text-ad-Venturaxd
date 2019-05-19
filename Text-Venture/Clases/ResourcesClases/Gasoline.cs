@@ -13,7 +13,7 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public void onNeed(System.Windows.Forms.RichTextBox txtbxConsola)
+        public void onNeed(ref System.Windows.Forms.RichTextBox txtbxConsola)
         {
             throw new NotImplementedException();
         }

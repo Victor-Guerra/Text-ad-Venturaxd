@@ -21,8 +21,8 @@ namespace Text_Venture.Clases
 
     interface ICombat
     {
-        void Attack(ref Character c, int accuracy, EDifficulty diff);
-        bool Abscond(EDifficulty diff);
+        void Attack(ref Character c, int accuracy);
+        int AbscondChance(EDifficulty diff);
     }
 
     interface ICommands

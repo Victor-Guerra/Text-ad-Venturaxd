@@ -10,9 +10,10 @@ namespace Text_Venture.Clases
     {
         private int hitbackChance;
 
-        public Melee(int atk, int acc, ENoisy noise, int hitback): base(atk,acc,noise)
+        public Melee(string name, string description, string imgFilePath, int atk, int acc, int hitback, ENoisy noise): base(name,description,imgFilePath,atk,acc)
         {
             this.hitbackChance = hitback;
+            this.NoiseLvl = ENoisy.SILENT;
         }
 
         public void RecoilVal(int hitbackChance)

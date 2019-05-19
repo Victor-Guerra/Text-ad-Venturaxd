@@ -19,7 +19,7 @@ namespace Text_Venture.Clases
         }
         public Weapon() { }
 
-        public void AttractEnemy(ENoisy noise, EDifficulty diff)
+        public virtual void AttractEnemy(ENoisy noise, EDifficulty diff)
         {
 
         }

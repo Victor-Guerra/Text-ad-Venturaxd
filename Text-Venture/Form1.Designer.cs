@@ -80,6 +80,8 @@
             // 
             // txtBxInput
             // 
+            this.txtBxInput.BackColor = System.Drawing.Color.Black;
+            this.txtBxInput.ForeColor = System.Drawing.Color.White;
             this.txtBxInput.Location = new System.Drawing.Point(20, 566);
             this.txtBxInput.Margin = new System.Windows.Forms.Padding(2);
             this.txtBxInput.Name = "txtBxInput";

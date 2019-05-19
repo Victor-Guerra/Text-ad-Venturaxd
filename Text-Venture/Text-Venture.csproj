@@ -49,6 +49,7 @@
     <Compile Include="Clases\BigCity.cs" />
     <Compile Include="Clases\Building.cs" />
     <Compile Include="Clases\Character.cs" />
+    <Compile Include="Clases\EnemyUtility.cs" />
     <Compile Include="Clases\Equipment.cs" />
     <Compile Include="Clases\Item.cs" />
     <Compile Include="Clases\Melee.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Clases\ResourcesClases\Food.cs" />
     <Compile Include="Clases\ResourcesClases\Gasoline.cs" />
     <Compile Include="Clases\ResourcesClases\Medkit.cs" />
+    <Compile Include="Clases\Scavenger.cs" />
     <Compile Include="Clases\StatusHandler.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Clases\Human.cs" />

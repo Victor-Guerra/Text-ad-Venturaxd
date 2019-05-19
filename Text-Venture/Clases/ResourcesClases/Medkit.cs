@@ -14,7 +14,7 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public void onNeed(RichTextBox txtbxConsola)
+        public void onNeed(ref RichTextBox txtbxConsola)
         {
             throw new NotImplementedException();
         }

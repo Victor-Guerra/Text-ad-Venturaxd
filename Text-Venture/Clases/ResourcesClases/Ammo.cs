@@ -49,7 +49,7 @@ namespace Text_Venture.Clases.ResourcesClases
             return w;
         }
 
-        public void onNeed(RichTextBox txtbxConsola)
+        public void onNeed(ref RichTextBox txtbxConsola)
         {
             throw new NotImplementedException();
         }
