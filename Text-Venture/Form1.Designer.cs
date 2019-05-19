@@ -73,6 +73,7 @@
             this.rchTxtOut.Location = new System.Drawing.Point(20, 346);
             this.rchTxtOut.Margin = new System.Windows.Forms.Padding(2);
             this.rchTxtOut.Name = "rchTxtOut";
+            this.rchTxtOut.ReadOnly = true;
             this.rchTxtOut.Size = new System.Drawing.Size(871, 198);
             this.rchTxtOut.TabIndex = 3;
             this.rchTxtOut.Text = "";

@@ -14,9 +14,9 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public void onNeed(RichTextBox txtbxConsola)
+        public void onNeed(ref RichTextBox txtbxConsola)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void onUse(int value, ref Player p)
@@ -32,7 +32,7 @@ namespace Text_Venture.Clases.ResourcesClases
             {
                 case 1:
                     w += "small";
-                    d = " Not much, but useful.";
+                    d = " Not much, but useful. Remember to Hydrate yourselves children!";
                     break;
                 case 2:
                     w += "medium";

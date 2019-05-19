@@ -10,7 +10,7 @@ namespace Text_Venture.Clases
     interface IResource
     {
         void onUse(int value, ref Player p);
-        void onNeed(System.Windows.Forms.RichTextBox txtbxConsola);
+        void onNeed(ref System.Windows.Forms.RichTextBox txtbxConsola);
     }
 
     interface IStatus
