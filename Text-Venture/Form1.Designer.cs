@@ -68,6 +68,7 @@
             // rchTxtOut
             // 
             this.rchTxtOut.BackColor = System.Drawing.Color.Black;
+            this.rchTxtOut.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rchTxtOut.ForeColor = System.Drawing.Color.White;
             this.rchTxtOut.Location = new System.Drawing.Point(20, 346);
             this.rchTxtOut.Margin = new System.Windows.Forms.Padding(2);
@@ -83,7 +84,6 @@
             this.txtBxInput.Name = "txtBxInput";
             this.txtBxInput.Size = new System.Drawing.Size(673, 20);
             this.txtBxInput.TabIndex = 4;
-            
             // 
             // bttnSubmit
             // 
@@ -110,7 +110,6 @@
             this.GrpPreview.TabIndex = 6;
             this.GrpPreview.TabStop = false;
             this.GrpPreview.Text = "Environment";
-            
             // 
             // groupBox1
             // 
@@ -125,7 +124,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
-            
             // 
             // groupBox2
             // 

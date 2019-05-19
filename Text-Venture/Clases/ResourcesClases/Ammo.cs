@@ -14,7 +14,7 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public override void SetValue(EDifficulty diff, EResourceSize siz)
+        protected override void SetValue(EDifficulty diff, EResourceSize siz)
         {
             switch ((int)diff)
             {
@@ -28,6 +28,25 @@ namespace Text_Venture.Clases.ResourcesClases
                     this.value = (int)siz+2;
                     break;
             }
+        }
+
+        public override string ToDisplay(EResourceSize siz)
+        {
+            string w = "Used a ";
+            switch ((int)siz)
+            {
+                case 1:
+                    w += "small";
+                    break;
+                case 2:
+                    w += "medium";
+                    break;
+                case 3:
+                    w += "large";
+                    break;     
+            }
+            w += " box of ammo.";
+            return w;
         }
 
         public void onNeed(RichTextBox txtbxConsola)

@@ -17,9 +17,15 @@ namespace Text_Venture.Clases
         {
             this.size = size;
         }
-        public virtual void SetValue(EDifficulty diff, EResourceSize siz)
+        protected virtual void SetValue(EDifficulty diff, EResourceSize siz)
         {
             this.value = (int)diff * (int)siz;
+        }
+
+        public virtual string ToDisplay(EResourceSize siz)
+        {
+            string strOut = "used a resource.";
+            return strOut;
         }
     }
 }

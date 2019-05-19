@@ -24,7 +24,7 @@ namespace Text_Venture.Clases.ResourcesClases
             throw new NotImplementedException();
         }
 
-        public override void SetValue(EDifficulty diff, EResourceSize siz)
+        protected override void SetValue(EDifficulty diff, EResourceSize siz)
         {
             switch ((int)diff)
             {

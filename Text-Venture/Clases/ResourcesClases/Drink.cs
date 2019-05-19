@@ -21,10 +21,33 @@ namespace Text_Venture.Clases.ResourcesClases
 
         public void onUse(int value, ref Player p)
         {
-            throw new NotImplementedException();
+            p.HydrationLvl += this.value;
         }
 
-        public override void SetValue(EDifficulty diff, EResourceSize siz)
+        public override string ToDisplay(EResourceSize siz)
+        {
+            string w = "Drank a ";
+            string d = "";
+            switch ((int)siz)
+            {
+                case 1:
+                    w += "small";
+                    d = " Not much, but useful.";
+                    break;
+                case 2:
+                    w += "medium";
+                    d = " Nice and refreshing!";
+                    break;
+                case 3:
+                    w += "large";
+                    d = " Quite sufficient for a single person!";
+                    break;
+            }
+            w += " bottle of water.";
+            w += d;
+            return w;
+        }
+        protected override void SetValue(EDifficulty diff, EResourceSize siz)
         {
             switch ((int)diff)
             {
