@@ -2,25 +2,34 @@
 <data>
   <BigCities>
     <los_angeles>
+      <description>Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.</description>
     </los_angeles>
     <san_antonio>
+      <description>San Antonio. </description>
     </san_antonio>
     <new_orleans>
+      <description>New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died-ish.</description>
     </new_orleans>
     <las_vegas>
+      <description>Las Vegas. Sin City is the most accurate name for this citi. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest.</description>
     </las_vegas>
     <albuquerque>
+      <description>Albuquerque. </description>
     </albuquerque>
     <oklahoma_city>
+      <description>Oklahoma City. </description>
     </oklahoma_city>
     <nashville>
+      <description>Nashville. </description>
     </nashville>
     <dc>
+      <description>Washington D. C.</description>
     </dc>
     <new-york>
+      <description>New York. </description>
     </new-york>
     <chicago>
+      <description>Chicago. </description>
     </chicago>
-
   </BigCities>
 </data>
