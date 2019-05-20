@@ -35,7 +35,7 @@ namespace Text_Venture.Clases
             IOC = new ReadWrite(ref consolaxd, ref input);
             Menu();
             LoadLocations();
-            this.player = new Player("", 100, 1, 1, "It's you!", "");
+            this.player = new Player("", 100, "It's you!", "");
         }
 
         private void Menu()
@@ -48,11 +48,17 @@ namespace Text_Venture.Clases
             string file = System.IO.File.ReadAllText(@"..\..\Recursos\Data.json");
             Newtonsoft.Json.Linq.JObject bigcities = Newtonsoft.Json.Linq.JObject.Parse(file);
             IList<Newtonsoft.Json.Linq.JToken> results = bigcities["data"]["city"].Children().ToList();
-            foreach(Newtonsoft.Json.Linq.JToken res in results)
+            //IList<Newtonsoft.Json.Linq.JToken> exits = bigcities["data"]["city"]["possExits"].Children().ToList();
+            foreach (Newtonsoft.Json.Linq.JToken res in results)
             {
                 BigCity bc = res.ToObject<BigCity>();
+                //foreach (Newtonsoft.Json.Linq.JToken[] exit in results)
+                //{
+                //    bc.possExits.Add(exit.ToString());
+                //}
                 locs.Add(bc.NAME, bc);
             }
+            
         }
     }
 }

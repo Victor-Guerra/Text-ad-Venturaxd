@@ -14,12 +14,12 @@ namespace Text_Venture.Clases
         private ETypeBuilding buildingType;
         private bool playerIsHere;
         private Dictionary<string, Resource> findables;
-
-        public Building()
+        public string Desc { get => description; }
+        public string Name { get => name; }
+        
+        public Building(ETypeBuilding bType)
         {
-            Random random = new Random();
-            buildingType = (ETypeBuilding)random.Next(1, 9);    //Escoge tipo de edificio con un random
-            switch (buildingType)       //Dependiendo del tipo de edificio genera el Dictionary con loot
+            switch (bType)       //Dependiendo del tipo de edificio genera el Dictionary con loot
             {
                 case ETypeBuilding.OXXO:
                     name = "oxxo";

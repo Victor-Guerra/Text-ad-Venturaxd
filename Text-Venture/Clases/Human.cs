@@ -9,22 +9,22 @@ namespace Text_Venture.Clases
     public abstract class Human : Character, ICombat
     {
         public string name;
-        //protected Weapon weapon;
-        //protected Equipment equipment;
+        protected Weapon weapon;
+        protected Equipment equipment;
 
         public Human(string name, int hp, string description, string file): base(hp, description, file)
         {
             this.name = name;
         }
 
-        //protected virtual void setWeapon(Weapon w)
-        //{
-        //    this.weapon = w;
-        //}
-        //protected virtual void setEquipment(Equipment e)
-        //{
-        //    this.equipment = e;
-        //}
+        protected virtual void setWeapon(Weapon w)
+        {
+            this.weapon = w;
+        }
+        protected virtual void setEquipment(Equipment e)
+        {
+            this.equipment = e;
+        }
 
         public void Attack(ref Character c, int accuracy)
         {
