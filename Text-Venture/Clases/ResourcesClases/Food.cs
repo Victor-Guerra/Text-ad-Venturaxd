@@ -31,11 +31,11 @@ namespace Text_Venture.Clases.ResourcesClases
             {
                 case 1:
                     w += "small";
-                    d = " Some sort of protein bar with no wrapper... hopefully.";
+                    d = " A small snack, barely enough to keep you going.";
                     break;
                 case 2:
                     w += "medium";
-                    d = " Tasted like ramen, but more fake.";
+                    d = " Almost a decent meal.";
                     break;
                 case 3:
                     w += "large";
