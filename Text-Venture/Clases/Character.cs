@@ -8,17 +8,14 @@ namespace Text_Venture.Clases
 {
     public abstract class Character
     {
-        protected int HealthPoints;
-        protected int baseATK;
-        protected int baseDEF;
+        public int HealthPoints;
         protected string Description;
         protected string ImgFilePath;
 
-        public Character(int hp, int atk, int def, string description, string file)
+
+        public Character(int hp, string description, string file)
         {
             this.HealthPoints = hp;
-            this.baseATK = atk;
-            this.baseDEF = def;
             this.Description = description;
             this.ImgFilePath = file;
         }
