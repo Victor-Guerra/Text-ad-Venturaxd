@@ -17,7 +17,7 @@ namespace Text_Venture.Clases
         
         
 
-        public Player(string name, int hp, int atk, int def, string description, string file) : base(name, hp, atk, def, description, file)
+        public Player(string name, int hp, string description, string file) : base(name, hp, description, file)
         {
             this.HealthPoints = 100;
             this.FoodLvl = 100;

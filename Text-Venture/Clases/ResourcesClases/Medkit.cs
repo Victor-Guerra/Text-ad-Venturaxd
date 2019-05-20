@@ -21,7 +21,8 @@ namespace Text_Venture.Clases.ResourcesClases
 
         public override void onUse(int value, ref Player p)
         {
-            p.HealthPoints
+            p.HealthPoints = (p.HealthPoints+value > 100) ? p.HealthPoints = 100 : p.HealthPoints+=value;
+            Game.MC.IOC.use();
         }
 
         protected override void SetValue(EDifficulty diff, EResourceSize siz)
