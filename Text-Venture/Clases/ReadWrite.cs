@@ -128,11 +128,11 @@ namespace Text_Venture.Clases
             }
             else if (c.StartsWith(CommandsTxt[9]))
             {
-                this.use(); Historial.Add(c);
+                //this.use(); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[10]))
             {
-                this.take(); Historial.Add(c);
+               // this.take(c.Remove(0,CommandsTxt[10].Length)); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[11]))
             {
@@ -163,6 +163,7 @@ namespace Text_Venture.Clases
         public void GoTo(string PlaceName)
         {
             Game.MC.player.GoTo(PlaceName);
+            MasterControl.displayImg.ImageLocation = Game.MC.locs[PlaceName].FilePath;
             output.AppendText(Game.MC.locs[PlaceName].DESC + '\n');
         }
 

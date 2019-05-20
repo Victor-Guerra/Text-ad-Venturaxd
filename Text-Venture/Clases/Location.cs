@@ -17,10 +17,11 @@ namespace Text_Venture.Clases
         public string DESC { get => this.description; }
         public static int DangerIndex { get => DangerIndex; }
 
-        public Location(string name, string filePath)
+        public Location(string name, string description)
         {
-            this.filePath = filePath;
+            this.description = description;
             this.name = name;
+            
 
         }
         public Location(string name, string description, string filePath)
