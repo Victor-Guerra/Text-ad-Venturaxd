@@ -103,6 +103,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Recursos\00 Starmap Truetype.ttf" />
     <None Include="Recursos\Data.json" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +112,9 @@
   <ItemGroup>
     <Content Include="Recursos\Data.xml" />
     <Content Include="Recursos\E.png" />
+    <Content Include="Recursos\LosAngeles.jpg" />
+    <Content Include="Recursos\NewOrleans.jpg" />
+    <Content Include="Recursos\SanAntonio.jpg" />
     <Content Include="Recursos\StartMenu.txt" />
   </ItemGroup>
   <ItemGroup>

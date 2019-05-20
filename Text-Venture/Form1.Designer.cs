@@ -45,13 +45,13 @@
             // 
             // lstBxStatus
             // 
-            this.lstBxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstBxStatus.Font = new System.Drawing.Font("00 Starmap Truetype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBxStatus.FormattingEnabled = true;
-            this.lstBxStatus.ItemHeight = 18;
+            this.lstBxStatus.ItemHeight = 14;
             this.lstBxStatus.Location = new System.Drawing.Point(4, 17);
             this.lstBxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.lstBxStatus.Name = "lstBxStatus";
-            this.lstBxStatus.Size = new System.Drawing.Size(215, 292);
+            this.lstBxStatus.Size = new System.Drawing.Size(215, 284);
             this.lstBxStatus.TabIndex = 0;
             this.lstBxStatus.TabStop = false;
             // 
@@ -70,7 +70,7 @@
             // 
             this.rchTxtOut.BackColor = System.Drawing.Color.Black;
             this.rchTxtOut.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rchTxtOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rchTxtOut.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rchTxtOut.ForeColor = System.Drawing.Color.White;
             this.rchTxtOut.Location = new System.Drawing.Point(20, 346);
             this.rchTxtOut.Margin = new System.Windows.Forms.Padding(2);
@@ -86,19 +86,19 @@
             // 
             this.txtBxInput.BackColor = System.Drawing.Color.Black;
             this.txtBxInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtBxInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxInput.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxInput.ForeColor = System.Drawing.Color.White;
             this.txtBxInput.Location = new System.Drawing.Point(20, 566);
             this.txtBxInput.Margin = new System.Windows.Forms.Padding(2);
             this.txtBxInput.MaxLength = 66;
             this.txtBxInput.Name = "txtBxInput";
-            this.txtBxInput.Size = new System.Drawing.Size(673, 26);
+            this.txtBxInput.Size = new System.Drawing.Size(673, 22);
             this.txtBxInput.TabIndex = 1;
             this.txtBxInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBxInput_KeyPress);
             // 
             // bttnSubmit
             // 
-            this.bttnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnSubmit.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bttnSubmit.Location = new System.Drawing.Point(696, 14);
             this.bttnSubmit.Margin = new System.Windows.Forms.Padding(2);
@@ -111,7 +111,7 @@
             // 
             // GrpPreview
             // 
-            this.GrpPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrpPreview.Font = new System.Drawing.Font("00 Starmap Truetype", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrpPreview.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.GrpPreview.Location = new System.Drawing.Point(14, 6);
             this.GrpPreview.Margin = new System.Windows.Forms.Padding(2);
@@ -125,7 +125,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lstBxStatus);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("00 Starmap Truetype", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(668, 6);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -138,7 +138,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("00 Starmap Truetype", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(14, 335);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -152,7 +152,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.bttnSubmit);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("00 Starmap Truetype", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox3.Location = new System.Drawing.Point(14, 552);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
