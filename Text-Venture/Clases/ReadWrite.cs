@@ -210,7 +210,7 @@ namespace Text_Venture.Clases
 
         private void playGame()
         {
-            output.AppendText("Your name is {0}, you have heard rumors that the zombie outbreak has not affected Canada. You are currently in {1}.", Player.Name)
+            output.AppendText("Your name is {0}, you have heard rumors that the zombie outbreak has not affected Canada. You are currently in {1}.", Game.MC.player.name, )
         }
 
 
