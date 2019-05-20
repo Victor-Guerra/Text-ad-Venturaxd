@@ -33,9 +33,9 @@ namespace Text_Venture.Clases
             Game.MC.locs[PlaceName].playerIsHere = true;//TryGetValue(PlaceName,out BigCity value);
         }
 
-        public void heal(Medkit med)
+        public void use(Resource resource)
         {
-            throw new NotImplementedException();
+            resource.onUse(resource.)
         }
 
         public void examine<T>(T item, ref RichTextBox consola)

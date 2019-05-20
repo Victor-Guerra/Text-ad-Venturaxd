@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    public abstract class Resource
+    public abstract class Resource : IResource
     {
-        protected EResourceSize size { get; }
+        protected EResourceSize size;
+        public EResourceSize Size { get => size; }
         protected int value;
         public int Value { get => value; }
 
@@ -27,5 +28,7 @@ namespace Text_Venture.Clases
             string strOut = "used a resource.";
             return strOut;
         }
+
+        public abstract void onUse(int value, ref Player p);
     }
 }
