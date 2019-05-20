@@ -11,11 +11,11 @@ namespace Text_Venture.Clases
     public class Player : Human, ICommands, ICombat
     {
         private StatusHandler status;
-        private BigCity location;
+        public BigCity location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
         private List<Medkit> medkitsLeft;
-
-        public BigCity Location { get => location; set => location = value; }
+        
+        
 
         public Player(string name, int hp, string description, string file) : base(name, hp, description, file)
         {
@@ -28,9 +28,9 @@ namespace Text_Venture.Clases
 
         public void GoTo(string PlaceName)
         {
-            if(this.Location != null)
-                this.Location.playerIsHere = false;
-            this.Location = Game.MC.locs[PlaceName];
+            if(this.location != null)
+                this.location.playerIsHere = false;
+            this.location = Game.MC.locs[PlaceName];
             Game.MC.locs[PlaceName].playerIsHere = true;//TryGetValue(PlaceName,out BigCity value);
         }
 

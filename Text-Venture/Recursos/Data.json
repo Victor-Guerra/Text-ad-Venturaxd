@@ -83,13 +83,13 @@
       },
       {
         "name": "denver",
-        "description": "Denver. Mile-High City as it was once called. Now, no one has any time for fancy names referring to the elevation above sea level. That said, that elevation makes breathing hard for some people, unfortunately the undead don't breathe. The bars and nightclubs that made this city alive have all been shut down for obvious reasons, the city's night life has become its night death.",
+        "description": "Denver. Mile-High City as it was once called.",
         "possExits": [ "williston" ],
         "level": 3
       },
       {
         "name": "kansas city",
-        "description": "Kansas City. Ironically not even in Kansas, Kansas City was one of the largest cities of Missouri. The music scene was boooming, night life was great, and there were plenty of museums to see what Kansas City once was. Well, needless to say that has changed. The museum of Kansas City has become Kansas City itself. A visage of the city it once was.",
+        "description": "Kansas City. [FILL]",
         "possExits": [
           "williston",
           "minneapolis"
@@ -98,7 +98,7 @@
       },
       {
         "name": "chicago",
-        "description": "Chicago. Probably one of the saddest losses since the outbreak. Chicago used to be a city known for its massive neogothic architecture with skyscrapers you'd fall over backwards before you saw the top. The Cloud gate, the shiny sculpture, was built to reflect the city's beauty and give you a better look of the buildings surrounding you. The reflection it casts now is not so pretty anymore. In fact it's quite gruesome.",
+        "description": "Chicago. [FILL]",
         "possExits": [ "minneapolis" ],
         "level": 3
       },
@@ -110,22 +110,22 @@
       },
       {
         "name": "seattle",
-        "description": "Seattle. Pike Place Market is not quite what it used to be. Used to be people'd sell fresh produce, fish, and the like. Now, the few merchants that sell their goods here can't afford to sell more than a granola bar or two, and that's while they're in stock. The merchants tha is, they usually don't last more than a few days. At least they pride themselves on selling humanely produced foods... VERY humane.",
+        "description": "Seattle. [FILL]",
         "level": 4
       },
       {
         "name": "williston",
-        "description": "Williston. One of the few small towns to hold their own after the outbreak. Used to have a population of little over 14,000 inhabitants, of course the numbers ar closer to about 200 now. Let's just hope that is because they have made it to Canada. You're close.",
+        "description": "Williston. [FILL]",
         "level": 4
       },
       {
         "name": "minneapolis",
-        "description": "Minneapolis. A Cultural landmark. Countless art museums dotted this city, from classical, to modern, to a literal huge spoon with a cherry. Minneapolis used to be a spot for all the weirdos to join and create art. It still is, but those weirdos are... dead. You're close.",
+        "description": "Minneapolis. [FILL]",
         "level": 4
       },
       {
         "name": "boston",
-        "description": "Boston. Ironic that one of the first cities to be founded would be the first to fall. Boston was ground zero for the outbreak, the entire city has been turned or left to Canada by now. Luckily many who turned have starved to death since very few survivors dare cross this city. Canada officials know this, but they still wait eagerly on the other side of the border. You're close.",
+        "description": "Boston. Ironic that one of the first cities to be founded would be one of the first to fall. Boston",
         "level": 4
       }
     ]
