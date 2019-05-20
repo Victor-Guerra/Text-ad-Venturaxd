@@ -22,3 +22,5 @@ namespace Text_Adventure.Clases
         public enum ENoisy {SILENT, AUDIBLE, LOUD};
     }
 }
+
+

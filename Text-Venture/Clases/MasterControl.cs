@@ -8,5 +8,11 @@ namespace Text_Adventure.Clases
 {
     class MasterControl
     {
+        weas weasd
+            weasdafa
+            d
+            af
+            aw
+            qf
     }
 }
