@@ -16,6 +16,7 @@ namespace Text_Venture.Clases
         private Dictionary<string, Resource> findables;
         public string Desc { get => description; }
         public string Name { get => name; }
+        protected string filePath;
 
         public Building(ETypeBuilding bType)
         {

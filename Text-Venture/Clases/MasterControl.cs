@@ -58,7 +58,9 @@ namespace Text_Venture.Clases
                 //}
                 locs.Add(bc.NAME, bc);
             }
-            
+            locs["los angeles"].SetFilePath(@"..\..\Recursos\LosAngeles.jpg");
+            locs["san antonio"].SetFilePath(@"..\..\Recursos\SanAntonio.jpg");
+            locs["new orleans"].SetFilePath(@"..\..\Recursos\NewOrleans.jpg");
         }
     }
 }
