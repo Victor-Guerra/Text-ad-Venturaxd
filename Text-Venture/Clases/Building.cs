@@ -39,7 +39,6 @@ namespace Text_Venture.Clases
                     };
                     break;
 
-                    //MORE TO FIL
                 case ETypeBuilding.DRUGS:
                     this.findables = new Dictionary<string, Object>()
                     {
