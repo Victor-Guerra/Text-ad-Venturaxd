@@ -204,6 +204,7 @@ namespace Text_Venture.Clases
                     input.Clear();
                     initStep = 0;
                     isStart = false;
+                    playGame();
                     break;
             }
         }
