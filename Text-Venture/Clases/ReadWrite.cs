@@ -180,7 +180,6 @@ namespace Text_Venture.Clases
                         default:
                             output.AppendText("No, no way you got there.");
                             return;
-                            break;
                     }
                     foreach (string s in StartMenuTxt)
                     {
@@ -208,6 +207,20 @@ namespace Text_Venture.Clases
                     break;
             }
         }
+
+        private void playGame()
+        {
+            output.AppendText("Your name is {0}, you have heard rumors that the zombie outbreak has not affected Canada. You are currently in {1}.", )
+        }
+
+
+
+
+
+
+
+
+
 
         public void look_around()
         {
