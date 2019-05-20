@@ -128,21 +128,6 @@ namespace Text_Venture.Clases
             output.AppendText(Game.MC.locs[PlaceName].DESC + '\n');
         }
 
-        public void take(Item item)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public void heal(Medkit med)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void scavenge()
-        {
-            throw new NotImplementedException();
-        }
 
         private static void DisplayHelp()
         { 
@@ -225,6 +210,16 @@ namespace Text_Venture.Clases
         }
 
         public void look_around()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void take<T>(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void use(Resource resource)
         {
             throw new NotImplementedException();
         }

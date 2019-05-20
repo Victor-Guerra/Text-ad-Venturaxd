@@ -20,7 +20,7 @@ namespace Text_Venture.Clases.ResourcesClases
 
         }
 
-        public void onUse(int value, ref Player p)
+        public override void onUse(int value, ref Player p)
         {
             p.HydrationLvl += this.value;
         }

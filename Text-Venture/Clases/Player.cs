@@ -36,7 +36,7 @@ namespace Text_Venture.Clases
 
         public void use(Resource resource)
         {
-            resource.onUse(resource.)
+            resource.onUse(resource.Size);
         }
 
         public void examine<T>(T item, ref RichTextBox consola)
@@ -65,6 +65,11 @@ namespace Text_Venture.Clases
         }
 
         public int AbscondChance(EDifficulty diff)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void take<T>(T item)
         {
             throw new NotImplementedException();
         }

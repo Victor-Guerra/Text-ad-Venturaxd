@@ -54,7 +54,7 @@ namespace Text_Venture.Clases.ResourcesClases
             txtbxConsola.AppendText("\nSeems the ammo is running real low...");
         }
 
-        public void onUse(int value, ref Player p)
+        public override void onUse(int value, ref Player p)
         {
             throw new NotImplementedException();
         }

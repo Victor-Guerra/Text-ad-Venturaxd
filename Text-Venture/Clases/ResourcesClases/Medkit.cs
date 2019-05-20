@@ -19,7 +19,7 @@ namespace Text_Venture.Clases.ResourcesClases
             throw new NotImplementedException();
         }
 
-        public void onUse(int value, ref Player p)
+        public override void onUse(int value, ref Player p)
         {
             throw new NotImplementedException();
         }
