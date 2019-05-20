@@ -28,11 +28,11 @@ namespace Text_Venture.Clases
             initStep = 1;
             isStart = true;
         }
-        
+
         public static void ImprimirMenu()
         {
             List<string> toOut = new List<string>();
-            foreach(string s in StartMenuTxt)
+            foreach (string s in StartMenuTxt)
             {
                 if (s.StartsWith("start:"))
                 {
@@ -41,9 +41,9 @@ namespace Text_Venture.Clases
             }
             int displacement = 0;
 
-            for(int i = 0; i < toOut.Count; i++)
+            for (int i = 0; i < toOut.Count; i++)
             {
-                displacement += (i == toOut.Count - 1)?0:toOut[i].Length + 1;
+                displacement += (i == toOut.Count - 1) ? 0 : toOut[i].Length + 1;
                 output.AppendText(toOut[i] + '\n');
                 if (i == toOut.Count - 1)
                 {
@@ -60,7 +60,7 @@ namespace Text_Venture.Clases
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
         public void interpretarInStartup()
-         {
+        {
             if (initStep == 3)
             {
                 Game.MC.player.name = input.Text.TrimEnd(' ');
@@ -99,20 +99,25 @@ namespace Text_Venture.Clases
         }
         public void interpretarInput()
         {
-                string[] command = input.Text.TrimEnd(' ').Split(new char[] { ' ', '\n', '\t' });
-                switch (command[0])
-                {
-                    case "help":
-                        DisplayHelp();
-                        break;
-                    case "quit":
-                    case "exit":
-                        //Application.Exit();
-                        break;
-                    default:
-                        output.AppendText("No such command." + '\n');
-                        break;
-                }
+            string[] command = input.Text.TrimEnd(' ').Split(new char[] { ' ', '\n', '\t' });
+            switch (command[0])
+            {
+                case "help":
+                    DisplayHelp();
+                    break;
+                case "goto":
+                case "go":
+                    Game.MC.player.GoTo(command[2] + (command[3] != null ? command[3] : ""));
+                    this.GoTo(command[2] + (command[3] != null ? command[3]: ""));
+                    break;
+                case "quit":
+                case "exit":
+                    //Application.Exit();
+                    break;
+                default:
+                    output.AppendText("No such command." + '\n');
+                    break;
+            }
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
             input.ResetText();
@@ -130,17 +135,17 @@ namespace Text_Venture.Clases
 
 
         private static void DisplayHelp()
-        { 
+        {
             List<string> toOut = new List<string>();
 
-            foreach(string s in StartMenuTxt)
+            foreach (string s in StartMenuTxt)
             {
                 if (s.StartsWith("help:"))
                 {
                     toOut.Add(s.Remove(0, 5));
                 }
             }
-            for(int i = 0; i < toOut.Count; i++)
+            for (int i = 0; i < toOut.Count; i++)
             {
                 output.AppendText(toOut[i] + '\n');
             }
@@ -155,10 +160,10 @@ namespace Text_Venture.Clases
                 case 1:
                     foreach (string s in StartMenuTxt)
                     {
-                    if (s.StartsWith("init1:"))
-                    {
-                        output.AppendText(s.Remove(0, 6) + '\n');
-                      }
+                        if (s.StartsWith("init1:"))
+                        {
+                            output.AppendText(s.Remove(0, 6) + '\n');
+                        }
                     }
                     initStep++;
                     break;
@@ -211,10 +216,11 @@ namespace Text_Venture.Clases
 
         private void playGame()
         {
-            string temp = "Your name is " + Game.MC.player.name.ToUpper() + ", you have heard rumors that the zombie outbreak has not affected Canada. You are currently in " + Game.MC.player.location.NAME.ToUpper() + " .\n";
+            string temp = "Your name is " + Game.MC.player.name.ToUpper() + ", you have heard rumors that the zombie outbreak has not affected Canada. You are currently in " + Game.MC.player.location.NAME.ToUpper() + " .\n\n";
             output.AppendText(temp);
             output.AppendText(Game.MC.player.location.DESC);
             output.AppendText("There seems to be a" + Game.MC.player.location.onLook());
+            output.AppendText("What do you do?\n");
 
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;

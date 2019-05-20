@@ -39,10 +39,12 @@ namespace Text_Venture.Clases
             outt += "but there´s a ";
 
             foreach (Building b in buildings.Values) {
-                outt += b.Name + (Equals(b, buildings.Values.Last<Building>())? ", and":", a ");
+                outt += b.Name.ToUpper() + (Equals(b, buildings.Values.Last<Building>())? ", and":", a ");
             }
-            outt += " a couple of hostiles, too.\n";
-            return outt;            
+            outt += " a couple of hostiles, too.\n\n";
+            return outt; 
+            
+
         }
     }
 }
