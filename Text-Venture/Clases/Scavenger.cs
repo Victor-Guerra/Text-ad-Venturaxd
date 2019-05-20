@@ -10,7 +10,7 @@ namespace Text_Venture.Clases
     {
         private int abscondChance;
         ETier tier;
-        public Scavenger(string name, int hp, int atk, int def, string description, string file) : base(name, hp, atk, def, description, file)
+        public Scavenger(string name, int hp, string description, string file) : base(name, hp, description, file)
         {
             tier = determineTier(MasterControl.difficulty, Location.DangerIndex);
             abscondChance = AbscondChance(MasterControl.difficulty);

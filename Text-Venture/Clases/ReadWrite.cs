@@ -211,7 +211,13 @@ namespace Text_Venture.Clases
 
         private void playGame()
         {
-            output.AppendText("Your name is {0}, you have heard rumors that the zombie outbreak has not affected Canada. You are currently in {1}.", Game.MC.player.name, )
+            string temp = "Your name is " + Game.MC.player.name.ToUpper() + ", you have heard rumors that the zombie outbreak has not affected Canada. You are currently in " + Game.MC.player.location.NAME.ToUpper() + " .\n";
+            output.AppendText(temp);
+            output.AppendText(Game.MC.player.location.DESC);
+            output.AppendText("There seems to be a" + Game.MC.player.location.onLook());
+
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
         }
 
 

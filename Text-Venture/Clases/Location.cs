@@ -17,7 +17,7 @@ namespace Text_Venture.Clases
         {
             this.name = name;
             this.description = description;
-            this.dangerIndex = 1;
+            
         }
         public Location() { }
 

@@ -9,25 +9,40 @@ namespace Text_Venture.Clases
     public class BigCity : Location
     {
         Dictionary<string, Building> buildings;
-        string[] possExits;
+        public List<string> possExits;
         public bool playerIsHere;
         int dropChance;
         int dayCounter;
-        public string NAME {get => this.name;}
+        public string NAME { get => this.name; }
         public string DESC { get => this.description; }
-        public string onLookAround;
-        public BigCity(string name, string description): base (name, description)
+
+        public BigCity(string name, string description) : base(name, description)
         {
+            Random random = new Random();
+            
             buildings = new Dictionary<string, Building>()
             {
-                {"1", new Building()},
-                {"2", new Building()},
-                {"3", new Building()}
+                {"1", new Building((ETypeBuilding)random.Next(1, 9))},
+                {"2", new Building((ETypeBuilding)random.Next(1, 9))},
+                {"3", new Building((ETypeBuilding)random.Next(1, 9))}
             };
 
-            onLookAround = "";
             //hacer que diga los buildings que hay y sus salidas
         }
+        public string onLook() 
+        {
+            string outt = "vailable exit highways to ";
+            foreach (string s in possExits)
+            {
+                outt += s.ToUpper() + ", ";
+            }
+            outt += "but there´s a ";
 
+            foreach (Building b in buildings.Values) {
+                outt += b.Name + (Equals(b, buildings.Values.Last<Building>())? ", and":", a ");
+            }
+            outt += " a couple of hostiles, too.\n";
+            return outt;            
+        }
     }
 }
