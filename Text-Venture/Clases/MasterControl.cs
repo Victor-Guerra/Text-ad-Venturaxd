@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Common;
+using Newtonsoft.Json;
 
 namespace Text_Venture.Clases
 {
@@ -26,7 +27,7 @@ namespace Text_Venture.Clases
             displayStatus = lst;
             consolaxd = rtbx;
             input = nput;
-            
+            locations = new List<Location>();
         }
         
         public void Startup()
@@ -43,7 +44,13 @@ namespace Text_Venture.Clases
 
         public void LoadLocations()
         {
-            
+            string file = System.IO.File.ReadAllText(@"C:\Users\vcitoremmanuel\Documents\GitHub\Text-ad-Venturaxd\Text-Venture\Recursos\Data.json");
+            Newtonsoft.Json.Linq.JObject bigcities = Newtonsoft.Json.Linq.JObject.Parse(file);
+            IList<Newtonsoft.Json.Linq.JToken> results = bigcities["Bigcity"].Children().ToList();
+            foreach(Newtonsoft.Json.Linq.JToken res in results)
+            {
+
+            }
         }
     }
 }

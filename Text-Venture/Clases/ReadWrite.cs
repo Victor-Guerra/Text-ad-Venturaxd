@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.IO;
 using Text_Venture.Clases.ResourcesClases;
 using System.Drawing;
+using Newtonsoft.Json;
 
 namespace Text_Venture.Clases
 {
@@ -214,6 +215,18 @@ namespace Text_Venture.Clases
             throw new NotImplementedException();
         }
     }
+    //public static T ParsearJson<T>(string filepath)
+    //{
+    //    T arr = JsonConvert.DeserializeObject<T>(File.ReadAllText(filepath));
+    //    //string[] file = File.ReadAllLines(filepath);
+    //    //for(int i = 0; i < file.Length; i++)
+    //    //{
+    //    //    if (file[i].StartsWith("\"BigCity\":"))
+    //    //    {
+               
+    //    //    }
+    //    //}
+    //}
 }
 
 //obo

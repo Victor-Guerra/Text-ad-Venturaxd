@@ -14,7 +14,7 @@ namespace Text_Venture.Clases
         int dropChance;
         int dayCounter;
 
-        public BigCity(string name, string description, int drop): base (name, description)
+        public BigCity(string name, string description): base (name, description)
         {
            
         }
