@@ -4,4 +4,5 @@ start:
 start:START or QUIT
 start:<<type 'help' to see all available commands>>
 help:The standard commands are:
-help:examine [target] --  go to [target] -- look around -- 
+help:examine [target] --  go to [target] -- look around -- take [target]
+help:heal -- scavenge -- 

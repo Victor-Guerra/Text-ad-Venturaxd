@@ -28,16 +28,16 @@ namespace Text_Venture.Clases
             {
                 if (s.StartsWith("start:"))
                 {
-                    toOut.Add(s);
+                    toOut.Add(s.Remove(0, 6));
                 }
             }
             int displacement = 0;
 
-            for(int i = 0; i < toOut.Capacity; i++)
+            for(int i = 0; i < toOut.Count; i++)
             {
-                displacement += (i == toOut.Capacity - 1)?0:toOut[i].Length + 1;
-                output.AppendText((i == toOut.Capacity - 1)?toOut[i]:toOut[i] + '\n');
-                if (i == toOut.Capacity - 1)
+                displacement += (i == toOut.Count - 1)?0:toOut[i].Length + 1;
+                output.AppendText(toOut[i] + '\n');
+                if (i == toOut.Count - 1)
                 {
                     output.Select(displacement - 1, displacement + 1);
                     output.SelectionFont = new Font("00 Starmap Truetype", 8);
@@ -78,15 +78,6 @@ namespace Text_Venture.Clases
             throw new NotImplementedException();
         }
 
-        public void eat(Food food)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void drink(Drink drink)
-        {
-            throw new NotImplementedException();
-        }
 
         public void heal(Medkit med)
         {
@@ -100,18 +91,27 @@ namespace Text_Venture.Clases
 
         private static void DisplayHelp()
         {
-            string[] str = File.ReadAllLines(@"..\..\Resources\StartMenu.txt");
+            string[] str = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
             List<string> toOut = new List<string>();
+
             foreach(string s in str)
             {
                 if (s.StartsWith("help:"))
                 {
-                    toOut.Add(s);
+                    toOut.Add(s.Remove(0, 5));
                 }
             }
+            for(int i = 0; i < toOut.Count; i++)
+            {
+                output.AppendText(toOut[i] + '\n');
+            }
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
+        }
 
-
-            //output.AppendText()
+        public void look_around()
+        {
+            throw new NotImplementedException();
         }
     }
 }

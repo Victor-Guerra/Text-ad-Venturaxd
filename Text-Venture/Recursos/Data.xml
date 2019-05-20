@@ -74,18 +74,18 @@
     </level_2>
 
     <level_3>
-      <!--PON DESCRIPTION-->
       <city>
         <name>salt lake city</name>
-        <description>Salt Lake City. [FILL]</description>
+        <description>Salt Lake City. This ciity, placed right next to a massive lake with tons of salt makes it a perfect spot to not find water. If you think that Salt Lake water is safe, you'd best be willing to deal with the effects of dehydration. Salt Lake City is the home of the mormon church, but they have holed themselves up in their 4 hectare land, accepting only converts, without letting anyone leave.</description>
         <possExits>
           <exit>seattle</exit>
           <exit>williston</exit>
         </possExits>
       </city>
+      <!--PON DESCRIPTION-->
       <city>
         <name>denver</name>
-        <description>Denver. [FILL]</description>
+        <description>Denver. Mile-High City as it was once called.</description>
         <possExits>
           <exit>williston</exit>
         </possExits>

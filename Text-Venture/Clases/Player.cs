@@ -14,7 +14,7 @@ namespace Text_Venture.Clases
         private Location location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
         private List<string> Historial;
-
+        private List<Medkit> medkitsLeft;
         
 
         public Player(string name, int hp, int atk, int def, string description, string file) : base(name, hp, atk, def, description, file)
@@ -22,17 +22,8 @@ namespace Text_Venture.Clases
             this.HealthPoints = 100;
             this.FoodLvl = 100;
             this.HydrationLvl = 100;
+            medkitsLeft = new List<Medkit>().Add(new Medkit((EResourceSize)2);
 
-        }
-
-        public void drink(Drink drink)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void eat(Food food)
-        {
-            throw new NotImplementedException();
         }
 
         public void GoTo(string PlaceName)
@@ -56,6 +47,11 @@ namespace Text_Venture.Clases
         }
 
         public void take(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void look_around()
         {
             throw new NotImplementedException();
         }

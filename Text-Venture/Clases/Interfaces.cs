@@ -30,8 +30,6 @@ namespace Text_Venture.Clases
         void examine<T>(T item, ref System.Windows.Forms.RichTextBox consola);
         void GoTo(string PlaceName);
         void take(Item item);
-        void eat(Food food);
-        void drink(Drink drink);
         void heal(Medkit med);
         void scavenge();
         void look_around();

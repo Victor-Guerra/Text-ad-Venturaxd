@@ -15,7 +15,7 @@ namespace Text_Venture.Clases
         public static RichTextBox consolaxd;
         public static TextBox input;
         private int DayCount;
-        ReadWrite IOC;
+        public ReadWrite IOC;
 
         public MasterControl(ref PictureBox picBx, ref ListBox lst, ref RichTextBox rtbx, ref TextBox nput)
         {
