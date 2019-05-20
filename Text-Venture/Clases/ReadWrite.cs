@@ -128,11 +128,11 @@ namespace Text_Venture.Clases
             }
             else if (c.StartsWith(CommandsTxt[9]))
             {
-                this.use(); Historial.Add(c);
+                //this.use(); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[10]))
             {
-                this.take(); Historial.Add(c);
+                //this.take(); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[11]))
             {
