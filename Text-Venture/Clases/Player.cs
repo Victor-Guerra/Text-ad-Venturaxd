@@ -28,7 +28,8 @@ namespace Text_Venture.Clases
 
         public void GoTo(string PlaceName)
         {
-            this.location.playerIsHere = false;
+            if(this.location != null)
+                this.location.playerIsHere = false;
             this.location = Game.MC.locs[PlaceName];
             Game.MC.locs[PlaceName].playerIsHere = true;//TryGetValue(PlaceName,out BigCity value);
         }

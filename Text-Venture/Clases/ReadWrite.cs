@@ -60,11 +60,12 @@ namespace Text_Venture.Clases
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
         public void interpretarInStartup()
-        {
+         {
             if (initStep == 3)
             {
                 Game.MC.player.name = input.Text.TrimEnd(' ');
                 initStep++;
+                InitGameSequence();
             }
             else
             {
@@ -214,6 +215,9 @@ namespace Text_Venture.Clases
                             output.AppendText(s.Remove(0, 6) + '\n');
                         }
                     }
+                    output.SelectAll();
+                    output.SelectionAlignment = HorizontalAlignment.Center;
+                    input.Clear();
                     initStep = 0;
                     isStart = false;
                     break;
