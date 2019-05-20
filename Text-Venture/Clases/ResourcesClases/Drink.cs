@@ -14,15 +14,11 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public static void onNeed(ref RichTextBox txtbxConsola)
-        {
-            txtbxConsola.AppendText("\nYour throat is beginning to feel dry...");
-
-        }
+     
 
         public override void onUse(int value, ref Player p)
         {
-            p.HydrationLvl += this.value;
+            p.HydrationLvl = p.HydrationLvl + this.value > 100?100:p.HydrationLvl + value;
         }
 
         public override string ToDisplay(EResourceSize siz)

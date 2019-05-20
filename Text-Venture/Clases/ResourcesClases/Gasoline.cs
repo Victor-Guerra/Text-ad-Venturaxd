@@ -13,14 +13,10 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public void onNeed(ref System.Windows.Forms.RichTextBox txtbxConsola)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void onUse(int value, ref Player p)
         {
-            throw new NotImplementedException();
+            p.gasoline = (p.gasoline + value > 100)?100:p.gasoline + value;
         }
 
         protected override void SetValue(EDifficulty diff, EResourceSize siz)

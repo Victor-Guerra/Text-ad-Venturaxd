@@ -8,13 +8,12 @@ namespace Text_Venture.Clases
 {
     public class BigCity : Location
     {
-        Dictionary<string, Building> buildings;
+        public Dictionary<string, Building> buildings;
         public List<string> possExits;
         public bool playerIsHere;
         int dropChance;
         int dayCounter;
-        public string NAME { get => this.name; }
-        public string DESC { get => this.description; }
+       
 
         public BigCity(string name, string description) : base(name, description)
         {
@@ -29,7 +28,7 @@ namespace Text_Venture.Clases
 
             //hacer que diga los buildings que hay y sus salidas
         }
-        public string onLook() 
+        public override string onLook() 
         {
             string outt = "vailable exit highways to ";
             foreach (string s in possExits)

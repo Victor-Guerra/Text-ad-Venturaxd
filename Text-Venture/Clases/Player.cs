@@ -11,7 +11,7 @@ namespace Text_Venture.Clases
     public class Player : Human, ICommands, ICombat
     {
         private StatusHandler status;
-        public BigCity location;
+        public Location location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
         private List<Medkit> medkitsLeft;
         
@@ -30,8 +30,16 @@ namespace Text_Venture.Clases
         {
             if(this.location != null)
                 this.location.playerIsHere = false;
-            this.location = Game.MC.locs[PlaceName];
-            Game.MC.locs[PlaceName].playerIsHere = true;//TryGetValue(PlaceName,out BigCity value);
+            try
+            {
+                this.location = Game.MC.locs[PlaceName];
+            }
+            catch (NullReferenceException)
+            {
+                this.location = Game.MC.locs[this.location.NAME].buildings[PlaceName];
+            }
+            Game.MC.locs[PlaceName].playerIsHere = true;
+            Game.MC.locs[location.NAME].buildings[PlaceName].playerIsHere = true;
         }
 
         public void use(Resource resource)
@@ -43,20 +51,10 @@ namespace Text_Venture.Clases
         {
             throw new NotImplementedException();
         }
-
-        public void scavenge()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void take(Item item)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void look_around()
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public void Attack(ref Character c, int accuracy)
@@ -69,9 +67,9 @@ namespace Text_Venture.Clases
             throw new NotImplementedException();
         }
 
-        public void take<T>(T item)
+        public void take<T>(T item)where T: Resource
         {
-            throw new NotImplementedException();
+            item.onUse(item.Value, ref Game.MC.player);
         }
     }
 }

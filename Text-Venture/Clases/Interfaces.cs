@@ -29,7 +29,7 @@ namespace Text_Venture.Clases
     {
         void examine<T>(T item, ref System.Windows.Forms.RichTextBox consola);
         void GoTo(string PlaceName);
-        void take<T>(T item);
+        void take<T>(T item) where T : Resource;
         void use(Resource resource);
         void look_around();
     }

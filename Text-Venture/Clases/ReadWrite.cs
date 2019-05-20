@@ -19,9 +19,11 @@ namespace Text_Venture.Clases
         public bool isStart;
         private static int initStep;
         private static string[] StartMenuTxt;
+        private static string[] CommandsTxt;
         public ReadWrite(ref RichTextBox text, ref TextBox command)
         {
             StartMenuTxt = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
+            CommandsTxt = File.ReadAllLines(@"..\..\Recursos\Commands.txt");
             input = command;
             output = text;
             Historial = new List<string>();
@@ -99,28 +101,58 @@ namespace Text_Venture.Clases
         }
         public void interpretarInput()
         {
-            string[] command = input.Text.TrimEnd(' ').Split(new char[] { ' ', '\n', '\t' });
-            switch (command[0])
+            //string[] command = input.Text.TrimEnd(' ').Split(' ');
+            string c = input.Text;
+            //foreach (string str in CommandsTxt)
+            if ((c.StartsWith(CommandsTxt[3])) || (c.StartsWith(CommandsTxt[4])) || (c.StartsWith(CommandsTxt[5])))
             {
-                case "help":
-                    DisplayHelp();
-                    break;
-                case "goto":
-                case "go":
-                    Game.MC.player.GoTo(command[2] + (command[3] != null ? command[3] : ""));
-                    this.GoTo(command[2] + (command[3] != null ? command[3]: ""));
-                    break;
-                case "quit":
-                case "exit":
-                    //Application.Exit();
-                    break;
-                default:
-                    output.AppendText("No such command." + '\n');
-                    break;
+                this.look_around(); Historial.Add(c);
+            }
+            else if ((c.StartsWith(CommandsTxt[6])))
+            {
+                DisplayHelp(); Historial.Add(c);
+            }
+            else if (c.StartsWith(CommandsTxt[0]) || c.StartsWith(CommandsTxt[1]) || c.StartsWith(CommandsTxt[2]))
+                if (c.StartsWith(CommandsTxt[0])) {
+                    this.GoTo(c.Remove(0, (CommandsTxt[0].Length))); }
+                else if (c.StartsWith(CommandsTxt[1])) {
+                    this.GoTo(c.Remove(0, (CommandsTxt[1].Length)));
+                }
+                else
+                {
+                    this.GoTo(c.Remove(0, (CommandsTxt[2].Length)));
+                }
+            else if (c.StartsWith(CommandsTxt[7]) || c.StartsWith(CommandsTxt[8]))
+            {
+                this.PreExit();
+            }
+            else if (c.StartsWith(CommandsTxt[9]))
+            {
+                this.use(); Historial.Add(c);
+            }
+            else if (c.StartsWith(CommandsTxt[10]))
+            {
+                this.take(); Historial.Add(c);
+            }
+            else if (c.StartsWith(CommandsTxt[11]))
+            {
+                //Game.MC.player.Attack(ref );
+            }
+            else
+            {
+                output.AppendText("No such command." + '\n');
             }
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
             input.ResetText();
+        }
+
+        private void PreExit()
+        {
+            File.AppendAllLines(@"..\..\Recursos\Historial.txt", Historial);
+            input.Clear();
+            Application.Exit();
+
         }
 
         public void examine<T>(T item, ref RichTextBox consola)
@@ -130,6 +162,7 @@ namespace Text_Venture.Clases
 
         public void GoTo(string PlaceName)
         {
+            Game.MC.player.GoTo(PlaceName);
             output.AppendText(Game.MC.locs[PlaceName].DESC + '\n');
         }
 
@@ -226,23 +259,15 @@ namespace Text_Venture.Clases
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
 
-
-
-
-
-
-
-
-
-
         public void look_around()
         {
-            throw new NotImplementedException();
+            output.AppendText(Game.MC.player.location.onLook() + '\n');
         }
 
-        public void take<T>(T item)
+        public void take<T>(T item) where T: Resource
         {
-            throw new NotImplementedException();
+            output.AppendText(item.ToDisplay(item.Size));
+            Game.MC.player.take(item);
         }
 
         public void use(Resource resource)

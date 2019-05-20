@@ -67,6 +67,7 @@
     <Compile Include="Clases\ResourcesClases\Medkit.cs" />
     <Compile Include="Clases\Scavenger.cs" />
     <Compile Include="Clases\StatusHandler.cs" />
+    <Compile Include="Clases\Zombie.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Clases\Human.cs" />
     <Compile Include="Clases\Interfaces.cs" />
@@ -110,6 +111,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recursos\Commands.txt" />
     <Content Include="Recursos\Data.xml" />
     <Content Include="Recursos\E.png" />
     <Content Include="Recursos\LosAngeles.jpg" />

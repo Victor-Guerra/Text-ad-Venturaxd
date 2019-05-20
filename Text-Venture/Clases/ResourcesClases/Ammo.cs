@@ -56,7 +56,7 @@ namespace Text_Venture.Clases.ResourcesClases
 
         public override void onUse(int value, ref Player p)
         {
-            throw new NotImplementedException();
+            p.ammo = p.ammo + value > 100 ? 100 : p.ammo + value;   
         }
     }
 }

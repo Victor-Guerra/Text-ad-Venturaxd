@@ -16,7 +16,7 @@ namespace Text_Venture.Clases
         private Dictionary<string, Resource> findables;
         public string Desc { get => description; }
         public string Name { get => name; }
-        
+
         public Building(ETypeBuilding bType)
         {
             switch (bType)       //Dependiendo del tipo de edificio genera el Dictionary con loot
@@ -107,6 +107,10 @@ namespace Text_Venture.Clases
                     break;
 
             }
+        }
+        public override string onLook()
+        {
+            return DESC;
         }
     }
 }
