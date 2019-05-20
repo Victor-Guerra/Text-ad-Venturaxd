@@ -1,134 +1,133 @@
 ﻿{
-"BigCity": [
-	{
-		"name": "los angeles",
-		"description": "Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.",
-    "possExits": [
-      "sacramento",
-      "las vegas"],
-    "level": 1
-	},
-  {
-    "name": "san antonio",
-    "description": "San Antonio. This used to be a city full of life and street culture. The riverwalk would host thousands of shoppers in its stores and restaurants, as well as couples riding on boats along the artificial river. Now that river seems more like a moat, teeming with corpses and radiating a foul smell. Going for a swim would be a guaranteed death.",
-    "possExits": [
-      "albuquerque",
-      "oklahoma city"],
-    "level": 1
-  },
-  {
-    "name": "new orleans",
-    "description": "New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died...ish.",
-    "possExits": [
-      "oklahoma city",
-      "nashville"
-    ],
-    "level": 1
-  },
-	{
-		"name": "sacramento",
-		"description": "Sacramento. Once California´s capital this city ushered during the gold rush with prospectors coming in from all over the country. Now, instead of looking for gold, they are looking for food and water. The buildings that were kept looking old, are now eerie with bodies that look like they are from the gold rush.",
-    "possExits": [ "salt lake city" ],
-		"level": 2
-	},
-  {
-    "name": "las vegas",
-    "description": "Las Vegas. Sin City. A fitting name. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest. Plenty of high-rollers are all over the streets with their pockets full of cash. They tried to take what they could, as if that would help them.",
-    "possExits": [
-      "salt lake city",
-      "denver"
-    ],
-    "level": 2
-	},
-  {
-    "name": "albuquerque",
-    "description": "Albuquerque. The biggest city in New Mexico has become a ghost town as much as the other historic sites that surround it. The only communities that seem to have stayed relatively safe are the native American communities on the outskirts of the city. That said, they do not accept newcomers. Anyone wandering near their land is a walking target, and they have great aim.",
-    "possExits": [
-      "salt lake city",
-      "denver"
-    ],
-    "level": 2
-  
-	},
-  {
-    "name": "oklahoma city",
-    "description": "Oklahoma City. A city known for their western heritage that has goe backwards in time. It's like the Wild West out here with everyone fightinh to survive, but instead of robbing banks, those who still live are raiding supermarkets and each other. Instead of killing bandits, they're killing the undead, and if you're not careful, you.",
-    "possExits": [
-      "denver",
-      "kansas city"
-    ],
-    "level": 2
+  "data": {
 
-  },
-  {
-    "name": "nashville",
-    "description": "Nashville. Often called The Capital of Country Music or Music City. A very fitting name, back in the day when music was still being produced here. Nothing new has come out of the city except for scavengers since the outbreak, and the country music that was once a sign of pride for the city has become the soundtrack for its empty streets.",
-    "possExits": [
-      "kansas city",
-      "chicago",
-      "washington d.c."
-    ],
-    "level": 2
-	},
-	{
-		"name": "salt lake city",
-		"description": "Salt Lake City. This ciity, placed right next to a massive lake with tons of salt makes it a perfect spot to not find water. If you think that Salt Lake water is safe, you'd best be willing to deal with the effects of dehydration. Salt Lake City is the home of the mormon church, but they have holed themselves up in their 4 hectare land, accepting only converts, without letting anyone leave.",
-		"possExits":  [
-        "seattle",
-        "williston"
-      ],
-      "level": 3
-	},
-  {
-    "name": "denver",
-    "description": "Denver. Mile-High City as it was once called.",
-    "possExits": [ "williston" ],
-    "level": 3
-  },
-  {
-    "name": "kansas city",
-    "description": "Kansas City. [FILL]",
-    "possExits": [
-      "williston",
-      "minneapolis"
-    ],
-    "level": 3
-  },
-  {
-    "name": "chicago",
-    "description": "Chicago. [FILL]",
-    "possExits": [ "minneapolis" ],
-    "level": 3
-  },
-  {
-    "name": "washington d.c.",
-    "description": "Washington D. C. The capital used to be a place notorious for its political significance, but the undead have no political leanings. It is said that the White House is a stronghold where nothing goes in or out, other than the president's personal scavengers or \"Collectors\" as they'd call themselves. Many try to climb over the massive wall outlining the White House's perimeter, but those who go in do not come out.",
-    "possExits": [ "boston" ],
-    "level": 3
-  },
-  {
-    "name": "seattle",
-    "description": "Seattle. [FILL]",
-    "possExits": [],
-    "level": 4
-  },
-  {
-    "name": "williston",
-    "description": "Williston. [FILL]",
-    "possExits": [],
-    "level": 4
-  },
-  {
-    "name": "minneapolis",
-    "description": "Minneapolis. [FILL]",
-    "possExits": [],
-    "level": 4
-  },
-  {
-    "name": "boston",
-    "description": "Boston. Ironic that one of the first cities to be founded would be one of the first to fall. Boston",
-    "possExits": [],
-    "level": 4
+    "city": [
+      {
+        "name": "los angeles",
+        "description": "Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.",
+        "possExits": [
+          "sacramento",
+          "las vegas"
+        ],
+        "level": 1
+      },
+      {
+        "name": "san antonio",
+        "description": "San Antonio. This used to be a city full of life and street culture. The riverwalk would host thousands of shoppers in its stores and restaurants, as well as couples riding on boats along the artificial river. Now that river seems more like a moat, teeming with corpses and radiating a foul smell. Going for a swim would be a guaranteed death.",
+        "possExits": [
+          "albuquerque",
+          "oklahoma city"
+        ],
+        "level": 1
+      },
+      {
+        "name": "new orleans",
+        "description": "New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died...ish.",
+        "possExits": [
+          "oklahoma city",
+          "nashville"
+        ],
+        "level": 1
+      },
+      {
+        "name": "sacramento",
+        "description": "Sacramento. Once California´s capital this city ushered during the gold rush with prospectors coming in from all over the country. Now, instead of looking for gold, they are looking for food and water. The buildings that were kept looking old, are now eerie with bodies that look like they are from the gold rush.",
+        "possExits": [ "salt lake city" ],
+        "level": 2
+      },
+      {
+        "name": "las vegas",
+        "description": "Las Vegas. Sin City. A fitting name. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest. Plenty of high-rollers are all over the streets with their pockets full of cash. They tried to take what they could, as if that would help them.",
+        "possExits": [
+          "salt lake city",
+          "denver"
+        ],
+        "level": 2
+      },
+      {
+        "name": "albuquerque",
+        "description": "Albuquerque. The biggest city in New Mexico has become a ghost town as much as the other historic sites that surround it. The only communities that seem to have stayed relatively safe are the native American communities on the outskirts of the city. That said, they do not accept newcomers. Anyone wandering near their land is a walking target, and they have great aim.",
+        "possExits": [
+          "salt lake city",
+          "denver"
+        ],
+        "level": 2
+      },
+      {
+        "name": "oklahoma city",
+        "description": "Oklahoma City. A city known for their western heritage that has goe backwards in time. It's like the Wild West out here with everyone fightinh to survive, but instead of robbing banks, those who still live are raiding supermarkets and each other. Instead of killing bandits, they're killing the undead, and if you're not careful, you.",
+        "possExits": [
+          "denver",
+          "kansas city"
+        ],
+        "level": 2
+      },
+      {
+        "name": "nashville",
+        "description": "Nashville. Often called The Capital of Country Music or Music City. A very fitting name, back in the day when music was still being produced here. Nothing new has come out of the city except for scavengers since the outbreak, and the country music that was once a sign of pride for the city has become the soundtrack for its empty streets.",
+        "possExits": [
+          "kansas city",
+          "chicago",
+          "washington d.c."
+        ],
+        "level": 2
+      },
+      {
+        "name": "salt lake city",
+        "description": "Salt Lake City. This ciity, placed right next to a massive lake with tons of salt makes it a perfect spot to not find water. If you think that Salt Lake water is safe, you'd best be willing to deal with the effects of dehydration. Salt Lake City is the home of the mormon church, but they have holed themselves up in their 4 hectare land, accepting only converts, without letting anyone leave.",
+        "possExits": [
+          "seattle",
+          "williston"
+        ],
+        "level": 2
+      },
+      {
+        "name": "denver",
+        "description": "Denver. Mile-High City as it was once called.",
+        "possExits": [ "williston" ],
+        "level": 3
+      },
+      {
+        "name": "kansas city",
+        "description": "Kansas City. [FILL]",
+        "possExits": [
+          "williston",
+          "minneapolis"
+        ],
+        "level": 3
+      },
+      {
+        "name": "chicago",
+        "description": "Chicago. [FILL]",
+        "possExits": [ "minneapolis" ],
+        "level": 3
+      },
+      {
+        "name": "washington d.c.",
+        "description": "Washington D. C. The capital used to be a place notorious for its political significance, but the undead have no political leanings. It is said that the White House is a stronghold where nothing goes in or out, other than the president's personal scavengers or \"Collectors\" as they'd call themselves. Many try to climb over the massive wall outlining the White House's perimeter, but those who go in do not come out.",
+        "possExits": [ "boston" ],
+        "level": 3
+      },
+      {
+        "name": "seattle",
+        "description": "Seattle. [FILL]",
+        "level": 4
+      },
+      {
+        "name": "williston",
+        "description": "Williston. [FILL]",
+        "level": 4
+      },
+      {
+        "name": "minneapolis",
+        "description": "Minneapolis. [FILL]",
+        "level": 4
+      },
+      {
+        "name": "boston",
+        "description": "Boston. Ironic that one of the first cities to be founded would be one of the first to fall. Boston",
+        "level": 4
+      }
+    ]
   }
-]
 }
