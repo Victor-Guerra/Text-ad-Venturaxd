@@ -39,7 +39,7 @@ namespace Text_Venture.Clases
                 this.location = Game.MC.locs[this.location.NAME].buildings[PlaceName];
             }
             Game.MC.locs[PlaceName].playerIsHere = true;
-            //Game.MC.locs[location.NAME].buildings[PlaceName].playerIsHere = true;
+            // Game.MC.locs[location.NAME].buildings[PlaceName].playerIsHere = true;
         }
 
         public void use(Resource resource)
