@@ -12,7 +12,7 @@ namespace Text_Venture.Clases
         protected Weapon weapon;
         protected Equipment equipment;
 
-        public Human(string name, int hp, int atk, int def, string description, string file): base(hp, atk, def, description, file)
+        public Human(string name, int hp, string description, string file): base(hp, description, file)
         {
             this.name = name;
         }

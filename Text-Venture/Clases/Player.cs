@@ -36,7 +36,7 @@ namespace Text_Venture.Clases
 
         public void use(Resource resource)
         {
-            resource.onUse(resource.Size);
+            resource.onUse(resource.Value, ref Game.MC.player);
         }
 
         public void examine<T>(T item, ref RichTextBox consola)
