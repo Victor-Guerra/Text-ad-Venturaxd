@@ -19,7 +19,7 @@ namespace Text_Venture
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void BttnSubmit_Click(object sender, EventArgs e)

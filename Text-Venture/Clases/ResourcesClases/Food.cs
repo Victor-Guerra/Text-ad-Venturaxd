@@ -23,6 +23,29 @@ namespace Text_Venture.Clases.ResourcesClases
         {
             throw new NotImplementedException();
         }
+        public override string ToDisplay(EResourceSize siz)
+        {
+            string w = "Ate a ";
+            string d = "";
+            switch ((int)siz)
+            {
+                case 1:
+                    w += "small";
+                    d = " Some sort of protein bar... hopefully.";
+                    break;
+                case 2:
+                    w += "medium";
+                    d = " Tasted like ramen, but more fake.";
+                    break;
+                case 3:
+                    w += "large";
+                    d = " Quite sufficient for a single person!";
+                    break;
+            }
+            w += "  portion of food.";
+            w += d;
+            return w;
+        }
 
         protected override void SetValue(EDifficulty diff, EResourceSize siz)
         {

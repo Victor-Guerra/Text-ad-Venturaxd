@@ -68,6 +68,7 @@
             // rchTxtOut
             // 
             this.rchTxtOut.BackColor = System.Drawing.Color.Black;
+            this.rchTxtOut.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.rchTxtOut.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rchTxtOut.ForeColor = System.Drawing.Color.White;
             this.rchTxtOut.Location = new System.Drawing.Point(20, 346);
@@ -81,11 +82,14 @@
             // txtBxInput
             // 
             this.txtBxInput.BackColor = System.Drawing.Color.Black;
+            this.txtBxInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtBxInput.Font = new System.Drawing.Font("00 Starmap Truetype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxInput.ForeColor = System.Drawing.Color.White;
             this.txtBxInput.Location = new System.Drawing.Point(20, 566);
             this.txtBxInput.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBxInput.MaxLength = 50;
             this.txtBxInput.Name = "txtBxInput";
-            this.txtBxInput.Size = new System.Drawing.Size(673, 20);
+            this.txtBxInput.Size = new System.Drawing.Size(673, 22);
             this.txtBxInput.TabIndex = 4;
             // 
             // bttnSubmit

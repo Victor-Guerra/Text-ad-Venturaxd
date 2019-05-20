@@ -1,35 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <BigCities>
-    <los_angeles>
+    <city starter="true">
+      <name>Los Angeles.</name>
       <description>Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.</description>
-    </los_angeles>
-    <san_antonio>
+    </city>
+    <city starter="true">
+      <name>San Antonio.</name>
       <description>San Antonio. </description>
-    </san_antonio>
-    <new_orleans>
+    </city>
+    <city starter=" true">
+      <name>New Orleans.</name>
       <description>New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died-ish.</description>
-    </new_orleans>
-    <las_vegas>
-      <description>Las Vegas. Sin City is the most accurate name for this citi. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest.</description>
-    </las_vegas>
-    <albuquerque>
+    </city>
+    <city>
+      <name>Las Vegas.</name>
+      <description>New Vegas. Sin City is the most accurate name for this city. It looks like hell. The casinos have been turned into either scavenger strongholds controlled by robotic A.I.s or cemeteries where the dead do not rest.</description>
+    </city>
+    <city>
+      <name>Albuquerque.</name>
       <description>Albuquerque. </description>
-    </albuquerque>
-    <oklahoma_city>
+    </city>
+    <city>
+      <name>Oklahoma City.</name>
       <description>Oklahoma City. </description>
-    </oklahoma_city>
-    <nashville>
+    </city>
+    <city>
+      <name>Nashville.</name>
       <description>Nashville. </description>
-    </nashville>
-    <dc>
+    </city>
+    <city>
+      <name>Washington D.C.</name>
       <description>Washington D. C.</description>
-    </dc>
-    <new-york>
-      <description>New York. </description>
-    </new-york>
-    <chicago>
+    </city>
+    <city>
+      <name>Boston.</name>
+      <description>Boston. </description>
+    </city>
+    <city>
+      <name>Chicago.</name>
       <description>Chicago. </description>
-    </chicago>
+    </city>
   </BigCities>
 </data>

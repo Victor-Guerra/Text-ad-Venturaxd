@@ -13,6 +13,8 @@ namespace Text_Venture.Clases
         public Scavenger(string name, int hp, int atk, int def, string description, string file) : base(name, hp, atk, def, description, file)
         {
             tier = determineTier(MasterControl.difficulty, Location.DangerIndex);
+            abscondChance = AbscondChance(MasterControl.difficulty);
+            
         }
 
         public int AbscondChance(EDifficulty diff)
@@ -40,24 +42,32 @@ namespace Text_Venture.Clases
 
         public void Attack(ref Character c, int accuracy)
         {
-            throw new NotImplementedException();
+            
         }
 
-        private ETier determineTier(EDifficulty diff, int dangerIndex)
+        private ETier determineTier(EDifficulty diff, int di)
         {
-            int i = dangerIndex;
             switch (diff)
             {
                 case EDifficulty.EASY:
-                    if (i == 0) { i = 0; } else { i--; }
+                    if (di == 0) { di = 0; } else { di--; }
                     break;
                 case EDifficulty.NORMAL:
                     break;
                 case EDifficulty.HARD:
-                    if (i == 3) { i = 3; } else { i++; }
+                    if (di == 3) { di = 3; } else { di++; }
                     break;
             }
-            return (ETier)i;
+            return (ETier)di;
+        }
+
+        protected override void setWeapon(Weapon w)
+        {
+            this.weapon = w;
+        }
+        protected override void setEquipment(Equipment e)
+        {
+            this.equipment = e;
         }
     }
 }

@@ -14,9 +14,10 @@ namespace Text_Venture.Clases.ResourcesClases
             SetValue(MasterControl.difficulty, size);
         }
 
-        public void onNeed(ref RichTextBox txtbxConsola)
+        public static void onNeed(ref RichTextBox txtbxConsola)
         {
-            
+            txtbxConsola.AppendText("\nYour throat is beginning to feel dry...");
+
         }
 
         public void onUse(int value, ref Player p)

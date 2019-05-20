@@ -8,9 +8,9 @@ namespace Text_Venture.Clases
 {
     abstract class Human : Character
     {
-        string name;
-        Weapon weapon;
-        Equipment equipment;
+        protected string name;
+        protected Weapon weapon;
+        protected Equipment equipment;
 
         public Human(string name, int hp, int atk, int def, string description, string file): base(hp, atk, def, description, file)
         {

@@ -49,9 +49,9 @@ namespace Text_Venture.Clases.ResourcesClases
             return w;
         }
 
-        public void onNeed(ref RichTextBox txtbxConsola)
+        public static void onNeed(ref RichTextBox txtbxConsola)
         {
-            throw new NotImplementedException();
+            txtbxConsola.AppendText("\nSeems the ammo is running real low...");
         }
 
         public void onUse(int value, ref Player p)
