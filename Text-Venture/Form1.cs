@@ -23,15 +23,16 @@ namespace Text_Venture
         {
             MC = new MasterControl(ref picBxPreview, ref lstBxStatus, ref rchTxtOut, ref txtBxInput);
             MC.Startup();
+            MC.LoadLocations();
         }
 
         private void BttnSubmit_Click(object sender, EventArgs e)
         {
-            MC.LoadLocations();
-            //if (MC.IOC.isStart)
-            //    MC.IOC.interpretarInStartup();
-            //else
-            //    MC.IOC.interpretarInput();
+            
+            if (MC.IOC.isStart)
+                MC.IOC.interpretarInStartup();
+            else
+                MC.IOC.interpretarInput();
         }
     }
 }
