@@ -11,7 +11,7 @@ namespace Text_Venture.Clases
     public class Player : Human, ICommands, ICombat
     {
         private StatusHandler status;
-        private BigCity location;
+        public BigCity location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
         private List<Medkit> medkitsLeft;
         
