@@ -8,7 +8,7 @@ namespace Text_Venture.Clases
 {
     public abstract class Human : Character, ICombat
     {
-        protected string name;
+        public string name;
         protected Weapon weapon;
         protected Equipment equipment;
 

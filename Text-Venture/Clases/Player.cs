@@ -11,10 +11,10 @@ namespace Text_Venture.Clases
     public class Player : Human, ICommands, ICombat
     {
         private StatusHandler status;
-        private Location location;
+        private BigCity location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
         private List<Medkit> medkitsLeft;
-     
+        
         
 
         public Player(string name, int hp, int atk, int def, string description, string file) : base(name, hp, atk, def, description, file)
@@ -28,7 +28,9 @@ namespace Text_Venture.Clases
 
         public void GoTo(string PlaceName)
         {
-            throw new NotImplementedException();
+            this.location.playerIsHere = false;
+            this.location = Game.MC.locs[PlaceName];
+            Game.MC.locs[PlaceName].playerIsHere = true;//TryGetValue(PlaceName,out BigCity value);
         }
 
         public void heal(Medkit med)

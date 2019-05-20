@@ -63,7 +63,7 @@ namespace Text_Venture.Clases
         {
             if (initStep == 3)
             {
-                Game.MC.player = new Player(input.Text.TrimEnd(' '), 100, 1, 1, "It's you!", "");
+                Game.MC.player.name = input.Text.TrimEnd(' ');
                 initStep++;
             }
             else
@@ -79,7 +79,6 @@ namespace Text_Venture.Clases
                         DisplayHelp();
                         break;
                     case "start":
-                        Game.MC.LoadLocations();
                         output.Clear();
                         InitGameSequence();
                         break;
@@ -125,7 +124,7 @@ namespace Text_Venture.Clases
 
         public void GoTo(string PlaceName)
         {
-            throw new NotImplementedException();
+            output.AppendText(Game.MC.locs[PlaceName].DESC + '\n');
         }
 
         public void take(Item item)
@@ -182,12 +181,15 @@ namespace Text_Venture.Clases
                     {
                         case "los angeles":
                             MasterControl.difficulty = EDifficulty.EASY;
+                            Game.MC.player.GoTo("los angeles");
                             break;
                         case "san antonio":
                             MasterControl.difficulty = EDifficulty.NORMAL;
+                            Game.MC.player.GoTo("san antonio");
                             break;
                         case "new orleans":
                             MasterControl.difficulty = EDifficulty.HARD;
+                            Game.MC.player.GoTo("new orleans");
                             break;
                         default:
                             output.AppendText("No, no way you got there.");
@@ -205,7 +207,15 @@ namespace Text_Venture.Clases
                     break;
                 case 4:
                     //ParaTestear
-                    //Game.MC.player.
+                    foreach (string s in StartMenuTxt)
+                    {
+                        if (s.StartsWith("init4:"))
+                        {
+                            output.AppendText(s.Remove(0, 6) + '\n');
+                        }
+                    }
+                    initStep = 0;
+                    isStart = false;
                     break;
             }
         }

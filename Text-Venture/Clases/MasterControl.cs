@@ -19,8 +19,7 @@ namespace Text_Venture.Clases
         private int DayCount;
         public ReadWrite IOC;
         public Player player;
-        private List<Location> locations;
-        private Dictionary<string,BigCity> locs;
+        public Dictionary<string,BigCity> locs;
 
         public MasterControl(ref PictureBox picBx, ref ListBox lst, ref RichTextBox rtbx, ref TextBox nput)
         {
@@ -28,7 +27,6 @@ namespace Text_Venture.Clases
             displayStatus = lst;
             consolaxd = rtbx;
             input = nput;
-            locations = new List<Location>();
             locs = new Dictionary<string, BigCity>();
         }
         
@@ -36,7 +34,8 @@ namespace Text_Venture.Clases
         {
             IOC = new ReadWrite(ref consolaxd, ref input);
             Menu();
-
+            LoadLocations();
+            this.player = new Player("", 100, 1, 1, "It's you!", "");
         }
 
         private void Menu()
@@ -46,13 +45,12 @@ namespace Text_Venture.Clases
 
         public void LoadLocations()
         {
-            string file = System.IO.File.ReadAllText(@"C:\Users\vcitoremmanuel\Documents\GitHub\Text-ad-Venturaxd\Text-Venture\Recursos\Data.json");
+            string file = System.IO.File.ReadAllText(@"..\..\Recursos\Data.json");
             Newtonsoft.Json.Linq.JObject bigcities = Newtonsoft.Json.Linq.JObject.Parse(file);
             IList<Newtonsoft.Json.Linq.JToken> results = bigcities["data"]["city"].Children().ToList();
             foreach(Newtonsoft.Json.Linq.JToken res in results)
             {
                 BigCity bc = res.ToObject<BigCity>();
-                locations.Add(bc);
                 locs.Add(bc.NAME, bc);
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture
 {
-        public enum ETypeBuilding {OXXO = 1 , HOUSE, DRUGS,
+        public enum ETypeBuilding {OXXO  = 1 , HOUSE, DRUGS,
                                STORE, MECHANIC, GAS_STATION,
                                PLAZA, CAMPSITE };
         public enum EDifficulty {EASY = 1, NORMAL = 3, HARD = 6};
