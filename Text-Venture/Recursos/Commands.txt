@@ -1,0 +1,12 @@
+﻿go to
+goto
+go
+look
+look at
+look around
+help
+quit
+exit
+use
+take
+attack

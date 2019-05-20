@@ -1,0 +1,14 @@
+﻿start:CANADA TRAIL
+start:escape the horde
+start: 
+start:START or QUIT
+start:<<type 'help' to see all available commands>>
+help:The standard commands are:
+help:examine [target] --  go to [target] -- look around -- take [target]
+help:heal -- scavenge -- attack [target] -- abscond
+init1:You wake up, all of a sudden. Just last night you
+init1:managed to get here, where was it? 
+init1:[Los Angeles][San Antonio][New Orleans]
+init2:Of course, how could you forget.
+init2:Speaking of forgetting, what was your name?
+init4:Huh, well whatever. Must keep going.
