@@ -14,7 +14,7 @@ namespace Text_Venture
     public partial class Game : Form
     {
 
-        static MasterControl MC;
+        public static MasterControl MC;
         public Game()
         {
             InitializeComponent();
@@ -27,7 +27,11 @@ namespace Text_Venture
 
         private void BttnSubmit_Click(object sender, EventArgs e)
         {
-            MC.IOC.interpretarInput();
+            MC.LoadLocations();
+            //if (MC.IOC.isStart)
+            //    MC.IOC.interpretarInStartup();
+            //else
+            //    MC.IOC.interpretarInput();
         }
     }
 }

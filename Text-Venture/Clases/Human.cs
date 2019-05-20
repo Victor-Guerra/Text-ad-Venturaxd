@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Human : Character
+    public abstract class Human : Character, ICombat
     {
         protected string name;
         protected Weapon weapon;
@@ -24,6 +24,16 @@ namespace Text_Venture.Clases
         protected virtual void setEquipment(Equipment e)
         {
             this.equipment = e;
+        }
+
+        public void Attack(ref Character c, int accuracy)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AbscondChance(EDifficulty diff)
+        {
+            throw new NotImplementedException();
         }
     }
 }

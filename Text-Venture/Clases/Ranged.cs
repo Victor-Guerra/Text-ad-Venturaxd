@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    class Ranged : Weapon
+    public class Ranged : Weapon
     {
         private int defaultAmmo;
         private bool isGun;

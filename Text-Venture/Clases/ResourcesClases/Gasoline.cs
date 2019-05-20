@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases.ResourcesClases
 {
-    class Gasoline: Resource, IResource
+    public class Gasoline: Resource, IResource
     {
         public Gasoline(EResourceSize size) : base(size)
         {

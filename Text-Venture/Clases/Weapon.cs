@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Weapon: Item
+    public abstract class Weapon: Item
     {
         protected int addedATK;
         protected int accuracy;

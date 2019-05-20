@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Common;
 
 namespace Text_Venture.Clases
 {
-    class MasterControl
+    public class MasterControl
     {
         public static EDifficulty difficulty;
         public static PictureBox displayImg;
@@ -16,19 +17,23 @@ namespace Text_Venture.Clases
         public static TextBox input;
         private int DayCount;
         public ReadWrite IOC;
+        public Player player;
+        private List<Location> locations;
 
         public MasterControl(ref PictureBox picBx, ref ListBox lst, ref RichTextBox rtbx, ref TextBox nput)
         {
             displayImg = picBx;
             displayStatus = lst;
             consolaxd = rtbx;
-            input = nput; 
+            input = nput;
+            
         }
         
         public void Startup()
         {
             IOC = new ReadWrite(ref consolaxd, ref input);
             Menu();
+
         }
 
         private void Menu()
@@ -36,5 +41,9 @@ namespace Text_Venture.Clases
             ReadWrite.ImprimirMenu();
         }
 
+        public void LoadLocations()
+        {
+            
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    class Melee : Weapon
+    public class Melee : Weapon
     {
         private int hitbackChance;
 

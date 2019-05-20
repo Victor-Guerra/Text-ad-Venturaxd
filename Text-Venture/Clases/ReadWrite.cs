@@ -10,21 +10,28 @@ using System.Drawing;
 
 namespace Text_Venture.Clases
 {
-    class ReadWrite : ICommands
+    public class ReadWrite : ICommands
     {
         public static TextBox input;
         public static RichTextBox output;
+        public List<string> Historial;
+        public bool isStart;
+        private static int initStep;
+        private static string[] StartMenuTxt;
         public ReadWrite(ref RichTextBox text, ref TextBox command)
         {
+            StartMenuTxt = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
             input = command;
             output = text;
+            Historial = new List<string>();
+            initStep = 1;
+            isStart = true;
         }
         
         public static void ImprimirMenu()
         {
-            string[] file = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
             List<string> toOut = new List<string>();
-            foreach(string s in file)
+            foreach(string s in StartMenuTxt)
             {
                 if (s.StartsWith("start:"))
                 {
@@ -51,16 +58,63 @@ namespace Text_Venture.Clases
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
+        public void interpretarInStartup()
+        {
+            if (initStep == 3)
+            {
+                Game.MC.player = new Player(input.Text.TrimEnd(' '), 100, 1, 1, "It's you!", "");
+                initStep++;
+            }
+            else
+            {
+                switch (input.Text.TrimEnd(' '))
+                {
+                    case "san antonio":
+                    case "new orleans":
+                    case "los angeles":
+                        InitGameSequence();
+                        break;
+                    case "help":
+                        DisplayHelp();
+                        break;
+                    case "start":
+                        Game.MC.LoadLocations();
+                        output.Clear();
+                        InitGameSequence();
+                        break;
+                    case "quit":
+                    case "exit":
+                        Application.Exit();
+                        break;
+                    default:
+                        output.AppendText("No such command." + '\n');
+                        break;
+                }
 
+                output.SelectAll();
+                output.SelectionAlignment = HorizontalAlignment.Center;
+                input.ResetText();
+            }
+        }
         public void interpretarInput()
         {
-            string[] command = input.Text.Split(new char[] { ' ', '\n', '\t' });
-            switch (command[0])
-            {
-                case "help":
-                    DisplayHelp();
-                    break;
-            }
+                string[] command = input.Text.TrimEnd(' ').Split(new char[] { ' ', '\n', '\t' });
+                switch (command[0])
+                {
+                    case "help":
+                        DisplayHelp();
+                        break;
+                    case "quit":
+                    case "exit":
+                        //Application.Exit();
+                        break;
+                    default:
+                        output.AppendText("No such command." + '\n');
+                        break;
+                }
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
+            input.ResetText();
         }
 
         public void examine<T>(T item, ref RichTextBox consola)
@@ -90,11 +144,10 @@ namespace Text_Venture.Clases
         }
 
         private static void DisplayHelp()
-        {
-            string[] str = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
+        { 
             List<string> toOut = new List<string>();
 
-            foreach(string s in str)
+            foreach(string s in StartMenuTxt)
             {
                 if (s.StartsWith("help:"))
                 {
@@ -107,6 +160,53 @@ namespace Text_Venture.Clases
             }
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void InitGameSequence()
+        {
+            switch (initStep)
+            {
+                case 1:
+                    foreach (string s in StartMenuTxt)
+                    {
+                    if (s.StartsWith("init1:"))
+                    {
+                        output.AppendText(s.Remove(0, 6) + '\n');
+                      }
+                    }
+                    initStep++;
+                    break;
+                case 2:
+                    switch (input.Text)
+                    {
+                        case "los angeles":
+                            MasterControl.difficulty = EDifficulty.EASY;
+                            break;
+                        case "san antonio":
+                            MasterControl.difficulty = EDifficulty.NORMAL;
+                            break;
+                        case "new orleans":
+                            MasterControl.difficulty = EDifficulty.HARD;
+                            break;
+                        default:
+                            output.AppendText("No, no way you got there.");
+                            return;
+                            break;
+                    }
+                    foreach (string s in StartMenuTxt)
+                    {
+                        if (s.StartsWith("init2:"))
+                        {
+                            output.AppendText(s.Remove(0, 6) + '\n');
+                        }
+                    }
+                    initStep++;
+                    break;
+                case 4:
+                    //ParaTestear
+                    //Game.MC.player.
+                    break;
+            }
         }
 
         public void look_around()

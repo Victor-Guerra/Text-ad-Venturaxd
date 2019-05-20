@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Character
+    public abstract class Character
     {
         protected int HealthPoints;
         protected int baseATK;
