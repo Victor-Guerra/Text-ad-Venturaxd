@@ -22,16 +22,12 @@ namespace Text_Venture.Clases
             consolaxd = rtbx;
             this.input = input; 
         }
-
+        
         public void Startup()
         {
-
+            ReadWrite.ImprimirMenu(ref consolaxd);
         }
 
-        public void DisplayMenu()
-        {
-
-        }
 
     }
 }

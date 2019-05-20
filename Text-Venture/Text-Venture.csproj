@@ -55,6 +55,7 @@
     <Compile Include="Clases\Melee.cs" />
     <Compile Include="Clases\Player.cs" />
     <Compile Include="Clases\Ranged.cs" />
+    <Compile Include="Clases\ReadWrite.cs" />
     <Compile Include="Clases\Resource.cs" />
     <Compile Include="Clases\ResourcesClases\Ammo.cs" />
     <Compile Include="Clases\ResourcesClases\Drink.cs" />
@@ -105,6 +106,10 @@
   <ItemGroup>
     <Content Include="Recursos\Data.xml" />
     <Content Include="Recursos\E.png" />
+    <Content Include="Recursos\StartMenu.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
