@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    class Equipment: Item
+    public class Equipment: Item
     {
         private int addedDEF { get; }
 

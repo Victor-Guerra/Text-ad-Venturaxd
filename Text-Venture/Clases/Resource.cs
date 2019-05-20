@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Resource
+    public abstract class Resource
     {
         protected EResourceSize size { get; }
         protected int value;

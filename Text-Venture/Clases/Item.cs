@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Item
+    public abstract class Item
     {
         protected string name {get; }
         protected string description { get; }

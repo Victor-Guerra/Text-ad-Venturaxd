@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    class BigCity : Location
+    public class BigCity : Location
     {
         Dictionary<string, Building> buildings = new Dictionary<string, Building>();
         BigCity[] possibleExits;

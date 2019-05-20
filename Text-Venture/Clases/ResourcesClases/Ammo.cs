@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Text_Venture.Clases.ResourcesClases
 {
-    class Ammo : Resource, IResource
+    public class Ammo : Resource, IResource
     {
         public Ammo( EResourceSize size) : base( size)
         {

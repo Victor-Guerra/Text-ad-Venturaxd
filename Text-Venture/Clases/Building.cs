@@ -7,7 +7,7 @@ using Text_Venture.Clases.ResourcesClases;
 
 namespace Text_Venture.Clases
 {
-    class Building : Location
+    public class Building : Location
     {
         private ETypeBuilding buildingType;
         private bool playerIsHere;

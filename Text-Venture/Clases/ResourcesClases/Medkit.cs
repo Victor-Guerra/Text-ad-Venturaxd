@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Text_Venture.Clases.ResourcesClases
 {
-    class Medkit : Resource, IResource
+    public class Medkit : Resource, IResource
     {
         public Medkit(EResourceSize size) : base(size)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Venture.Clases
 {
-    abstract class Location
+    public abstract class Location
     {
         protected string name;
         protected string description;
