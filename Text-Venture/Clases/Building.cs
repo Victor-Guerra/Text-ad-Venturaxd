@@ -12,6 +12,10 @@ namespace Text_Venture.Clases
         private bool playerIsHere;
         private Dictionary<string, Object> findables;
 
+        public Building(ETypeBuilding bdType)
+        {
+            this.buildingType = bdType;
+        }
         
     }
 }

@@ -1,4 +1,7 @@
-﻿CANADA TRAIL
-escape the horde
- 
-START or QUIT
+﻿start:CANADA TRAIL
+start:escape the horde
+start: 
+start:START or QUIT
+start:<<type 'help' to see all available commands>>
+help:The standard commands are:
+help:examine [target] --  go to [target] -- look around -- 

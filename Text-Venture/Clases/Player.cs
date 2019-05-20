@@ -45,7 +45,7 @@ namespace Text_Venture.Clases
             throw new NotImplementedException();
         }
 
-        public void inspect<T>(T item, ref RichTextBox consola)
+        public void examine<T>(T item, ref RichTextBox consola)
         {
             throw new NotImplementedException();
         }

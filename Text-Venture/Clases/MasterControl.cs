@@ -3,31 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Text_Venture.Clases
 {
     class MasterControl
     {
         public static EDifficulty difficulty;
-        public System.Windows.Forms.PictureBox displayImg;
-        public System.Windows.Forms.ListBox displayStatus;
-        public System.Windows.Forms.RichTextBox consolaxd;
-        public System.Windows.Forms.TextBox input;
+        public static PictureBox displayImg;
+        public static ListBox displayStatus;
+        public static RichTextBox consolaxd;
+        public static TextBox input;
         private int DayCount;
+        ReadWrite IOC;
 
-        public MasterControl(ref System.Windows.Forms.PictureBox picBx, ref System.Windows.Forms.ListBox lst, ref System.Windows.Forms.RichTextBox rtbx, ref System.Windows.Forms.TextBox input)
+        public MasterControl(ref PictureBox picBx, ref ListBox lst, ref RichTextBox rtbx, ref TextBox nput)
         {
             displayImg = picBx;
             displayStatus = lst;
             consolaxd = rtbx;
-            this.input = input; 
+            input = nput; 
         }
         
         public void Startup()
         {
-            ReadWrite.ImprimirMenu(ref consolaxd);
+            IOC = new ReadWrite(ref consolaxd, ref input);
+            Menu();
         }
 
+        private void Menu()
+        {
+            ReadWrite.ImprimirMenu();
+        }
 
     }
 }

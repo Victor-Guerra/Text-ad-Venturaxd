@@ -1,45 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <BigCities>
-    <city starter="true">
-      <name>Los Angeles</name>
-      <description>Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.</description>
-    </city>
-    <city starter="true">
-      <name>San Antonio</name>
-      <description>San Antonio. This used to be a city full of life and street culture. The riverwalk would host thousands of shoppers in its stores and restaurants, as well as couples riding on boats along the artificial river. Now that river seems more like a moat, teeming with corpses and radiating a foul smell. Going for a swim would be a guaranteed death.</description>
-    </city>
-    <city starter=" true">
-      <name>New Orleans</name>
-      <description>New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died...ish.</description>
-    </city>
-    <city>
-      <name>Las Vegas</name>
-      <description>Las Vegas. Sin City. A fitting name. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest. Plenty of high-rollers are all over the streets with their pockets full of cash. They tried to take what they could, as if that would help them.</description>
-    </city>
-    <city>
-      <name>Albuquerque</name>
-      <description>Albuquerque. The biggest city in New Mexico has become a ghost town as much as the other historic sites that surround it. The only communities that seem to have stayed relatively safe are the native American communities on the outskirts of the city. That said, they do not accept newcomers. Anyone wandering near their land is a walking target, and they have great aim.</description>
-    </city>
-    <city>
-      <name>Oklahoma City</name>
-      <description>Oklahoma City. A city known for their western heritage that has goe backwards in time. It's like the Wild West out here with everyone fightinh to survive, but instead of robbing banks, those who still live are raiding supermarkets and each other. Instead of killing bandits, they're killing the undead, and if you're not careful, you.</description>
-    </city>
-    <city>
-      <name>Nashville</name>
-      <description>Nashville. Often called The Capital of Country Music or Music City. A very fitting name, back in the day when music was still being produced here. Nothing new has come out of the city except for scavengers since the outbreak, and the country music that was once a sign of pride for the city has become the soundtrack for its empty streets.</description>
-    </city>
-    <city>
-      <name>Washington D.C.</name>
-      <description>Washington D. C. The capital used to be a place notorious for its political significance, but the undead have no political leanings. It is said that the White House is a stronghold where nothing goes in or out, other than the president's personal scavengers or "Collectors" as they'd call themselves. Many try to climb over the massive wall outlining the White House's perimeter, but those who go in do not come out.</description>
-    </city>
-    <city>
-      <name>Boston</name>
-      <description>Boston. Ironic that one of the first cities to be founded would be one of the first to fall. Boston </description>
-    </city>
-    <city>
-      <name>Chicago</name>
-      <description>Chicago. </description>
-    </city>
+    <!--COMPLETE-->
+    <level_1>
+      <city starter="true">
+        <name>los angeles</name>
+        <description>Los Angeles. What was once the home of celebrities and millionaires, has been overrun by the undead. Any amount of money or how many houses you had has become irrelevant. All that matters now is Food, Drink, Gas, and Ammo. Many buildings have been sacked already by others trying to reach Canada. However, you can see a few buildings that seem relatively untouched.</description>
+        <possExits>
+          <exit>sacramento</exit>
+          <exit>las vegas</exit>
+        </possExits>
+      </city>
+      <city starter="true">
+        <name>san antonio</name>
+        <description>San Antonio. This used to be a city full of life and street culture. The riverwalk would host thousands of shoppers in its stores and restaurants, as well as couples riding on boats along the artificial river. Now that river seems more like a moat, teeming with corpses and radiating a foul smell. Going for a swim would be a guaranteed death.</description>-
+        <possExits>
+          <exit>albuquerque</exit>
+          <exit>oklahoma city</exit>
+        </possExits>
+      </city>
+      <city starter=" true">
+        <name>new orleans</name>
+        <description>New Orleans. The sound of jazz and marching bands that used to fill these streets has been replaced with the sounds of gunshots, moans, and screams. Bead necklaces and other parade goodies are strewn about the floor, covered in blood. Most people have left the city, holed up somewhere, or died...ish.</description>
+        <possExits>
+          <exit>oklahoma city</exit>
+          <exit>nashville</exit>
+        </possExits>
+      </city>
+    </level_1>
+
+    <!--COMPLETE-->
+    <level_2>
+      <city>
+        <name>sacramento</name>
+        <description>Sacramento. Once California´s capital this city ushered during the gold rush with prospectors coming in from all over the country. Now, instead of looking for gold, they are looking for food and water. The buildings that were kept looking old, are now eerie with bodies that look like they are from the gold rush.</description>
+        <possExits>
+          <exit>salt lake city</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>las vegas</name>
+        <description>Las Vegas. Sin City. A fitting name. It looks like hell. The casinos have been turned into either scavenger strongholds or cemeteries where the dead do not rest. Plenty of high-rollers are all over the streets with their pockets full of cash. They tried to take what they could, as if that would help them.</description>
+        <possExits>
+          <exit>salt lake city</exit>
+          <exit>denver</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>albuquerque</name>
+        <description>Albuquerque. The biggest city in New Mexico has become a ghost town as much as the other historic sites that surround it. The only communities that seem to have stayed relatively safe are the native American communities on the outskirts of the city. That said, they do not accept newcomers. Anyone wandering near their land is a walking target, and they have great aim.</description>
+        <possExits>
+          <exit>salt lake city</exit>
+          <exit>denver</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>oklahoma city</name>
+        <description>Oklahoma City. A city known for their western heritage that has goe backwards in time. It's like the Wild West out here with everyone fightinh to survive, but instead of robbing banks, those who still live are raiding supermarkets and each other. Instead of killing bandits, they're killing the undead, and if you're not careful, you.</description>
+        <possExits>
+          <exit>denver</exit>
+          <exit>kansas city</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>nashville</name>
+        <description>Nashville. Often called The Capital of Country Music or Music City. A very fitting name, back in the day when music was still being produced here. Nothing new has come out of the city except for scavengers since the outbreak, and the country music that was once a sign of pride for the city has become the soundtrack for its empty streets.</description>
+        <possExits>
+          <exit>kansas city</exit>
+          <exit>chicago</exit>
+          <exit>washington d.c.</exit>
+        </possExits>
+      </city>
+    </level_2>
+
+    <level_3>
+      <!--PON DESCRIPTION-->
+      <city>
+        <name>salt lake city</name>
+        <description>Salt Lake City. [FILL]</description>
+        <possExits>
+          <exit>seattle</exit>
+          <exit>williston</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>denver</name>
+        <description>Denver. [FILL]</description>
+        <possExits>
+          <exit>williston</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>kansas city</name>
+        <description>Kansas City. [FILL]</description>
+        <possExits>
+          <exit>williston</exit>
+          <exit>minneapolis</exit>
+        </possExits>
+      </city>
+      <city>
+        <name>chicago</name>
+        <description>Chicago. [FILL]</description>
+        <possExits>
+          <exit>minneapolis</exit>
+        </possExits>
+      </city>
+      
+      <city>
+        <name>washington d.c.</name>
+        <description>Washington D. C. The capital used to be a place notorious for its political significance, but the undead have no political leanings. It is said that the White House is a stronghold where nothing goes in or out, other than the president's personal scavengers or "Collectors" as they'd call themselves. Many try to climb over the massive wall outlining the White House's perimeter, but those who go in do not come out.</description>
+        <possExits>
+          <exit>boston</exit>
+        </possExits>
+      </city>
+    </level_3>
+
+    <level_4>
+      <!--PON DESCRIPTION-->
+      <city>
+        <name>seattle</name>
+        <description>Seattle. [FILL]</description>
+      </city>
+      <city>
+        <name>williston</name>
+        <description>Williston. [FILL]</description>
+      </city>
+      <city>
+        <name>minneapolis</name>
+        <description>Minneapolis. [FILL]</description>
+      </city>
+      
+      <city>
+        <name>boston</name>
+        <description>Boston. Ironic that one of the first cities to be founded would be one of the first to fall. Boston </description>
+      </city>
+    </level_4>
+
+
   </BigCities>
 </data>
