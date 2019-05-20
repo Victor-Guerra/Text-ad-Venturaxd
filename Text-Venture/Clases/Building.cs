@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Text_Venture.Clases.ResourcesClases;
 
+
 namespace Text_Venture.Clases
 {
     public class Building : Location

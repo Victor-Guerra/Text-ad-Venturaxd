@@ -28,11 +28,18 @@ namespace Text_Venture
 
         private void BttnSubmit_Click(object sender, EventArgs e)
         {
-            
             if (MC.IOC.isStart)
                 MC.IOC.interpretarInStartup();
             else
                 MC.IOC.interpretarInput();
+        }
+
+        private void TxtBxInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                BttnSubmit_Click(sender, e);
+            }
         }
     }
 }
