@@ -31,7 +31,7 @@ namespace Text_Venture.Clases.ResourcesClases
             {
                 case 1:
                     w += "small";
-                    d = " Some sort of protein bar... hopefully.";
+                    d = " Some sort of protein bar with no wrapper... hopefully.";
                     break;
                 case 2:
                     w += "medium";
