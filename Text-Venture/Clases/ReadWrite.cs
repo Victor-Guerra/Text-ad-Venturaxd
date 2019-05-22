@@ -8,6 +8,8 @@ using System.IO;
 using Text_Venture.Clases.ResourcesClases;
 using System.Drawing;
 using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace Text_Venture.Clases
 {
@@ -20,6 +22,8 @@ namespace Text_Venture.Clases
         private static int initStep;
         private static string[] StartMenuTxt;
         private static string[] CommandsTxt;
+        private static Queue<string> BuferOutput;
+        
         public ReadWrite(ref RichTextBox text, ref TextBox command)
         {
             StartMenuTxt = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
@@ -29,37 +33,68 @@ namespace Text_Venture.Clases
             Historial = new List<string>();
             initStep = 1;
             isStart = true;
+            BuferOutput = new Queue<string>();
+            
         }
 
+
+        private static void PrintOutput()
+        {
+           foreach(string s in BuferOutput)
+            {
+                output.AppendText(s);
+            }
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        private static void PrintOutput( System.Drawing.Color color, params string[] substr)
+        {
+            
+            foreach (string s in BuferOutput)
+            {
+                output.AppendText(s);
+                foreach (string str in substr)
+                {
+                    Regex rx = new Regex(str, RegexOptions.IgnoreCase);
+
+                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index, substr.Length);
+                }
+            }
+            BuferOutput.Clear();
+            output.SelectionColor = color;
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        private static void PrintOutput(Font font, params string[] substr)
+        {
+
+            foreach (string s in BuferOutput)
+            {
+                output.AppendText(s);
+                foreach (string str in substr)
+                {
+                    Regex rx = new Regex(str, RegexOptions.IgnoreCase);
+
+                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index, substr.Length);
+                }
+
+            }
+            BuferOutput.Clear();
+            output.SelectionFont = font;
+            output.SelectAll();
+            output.SelectionAlignment = HorizontalAlignment.Center;
+        }
         public static void ImprimirMenu()
         {
-            List<string> toOut = new List<string>();
+            
             foreach (string s in StartMenuTxt)
             {
                 if (s.StartsWith("start:"))
                 {
-                    toOut.Add(s.Remove(0, 6));
+                    BuferOutput.Enqueue(s.Remove(0, 6)+ "\n");
                 }
             }
-            int displacement = 0;
-
-            for (int i = 0; i < toOut.Count; i++)
-            {
-                displacement += (i == toOut.Count - 1) ? 0 : toOut[i].Length + 1;
-                output.AppendText(toOut[i] + '\n');
-                if (i == toOut.Count - 1)
-                {
-                    output.Select(displacement - 1, displacement + 1);
-                    output.SelectionFont = new Font("00 Starmap Truetype", 8);
-                    output.Select(output.Text.Length - 3, output.Text.Length - 2);
-                    output.SelectionFont = new Font("00 Starmap Truetype", 8);
-                }
-
-
-            }
-
-            output.SelectAll();
-            output.SelectionAlignment = HorizontalAlignment.Center;
+            PrintOutput(new Font("00 Starmap Truetype", 8), new string[] { "<<", ">>" });
         }
         public void interpretarInStartup()
         {
@@ -149,7 +184,7 @@ namespace Text_Venture.Clases
 
         private void PreExit()
         {
-            File.AppendAllLines(@"..\..\Recursos\Historial.txt", Historial);
+            File.WriteAllLines(@"..\..\Recursos\Historial.txt", Historial);
             input.Clear();
             Application.Exit();
 
@@ -224,10 +259,16 @@ namespace Text_Venture.Clases
                     {
                         if (s.StartsWith("init2:"))
                         {
-                            output.AppendText(s.Remove(0, 6) + '\n');
+                            BuferOutput.Enqueue(s.Remove(0, 6) + '\n');
                         }
                     }
                     initStep++;
+                    foreach(string s in BuferOutput)
+                    {
+                        output.AppendText(s);
+                        BuferOutput.Dequeue();
+                        
+                    }
                     break;
                 case 4:
                     //ParaTestear

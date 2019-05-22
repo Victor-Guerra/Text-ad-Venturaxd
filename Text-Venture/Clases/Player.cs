@@ -38,11 +38,18 @@ namespace Text_Venture.Clases
             {
                 this.location = Game.MC.locs[this.location.NAME].buildings[PlaceName];
             }
-            Game.MC.locs[PlaceName].playerIsHere = true;
-            // Game.MC.locs[location.NAME].buildings[PlaceName].playerIsHere = true;
+            if(Game.MC.locs[PlaceName].playerIsHere == true)
+            {
+                Game.MC.locs[location.NAME].buildings[PlaceName].playerIsHere = true;
+            }
+            else
+            {
+                Game.MC.locs[PlaceName].playerIsHere = true;
+            }
+            //        
         }
 
-        public void use(Resource resource)
+            public void use(Resource resource)
         {
             resource.onUse(resource.Value, ref Game.MC.player);
         }
