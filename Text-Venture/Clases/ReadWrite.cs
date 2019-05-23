@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using Text_Venture.Clases.ResourcesClases;
 using System.Drawing;
 using Newtonsoft.Json;
-using System.ComponentModel;
 using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace Text_Venture.Clases
 {
@@ -24,8 +24,10 @@ namespace Text_Venture.Clases
         private static string[] CommandsTxt;
         private static Queue<string> BuferOutput;
         private static Queue<string> BuferInput;
-        private Dictionary<string, ECommands> commandDic;
-        
+        protected static Assembly assembly;
+        //private static WaitHandle wait;
+        //private Dictionary<string, ECommands> commandDic;
+
         public ReadWrite(ref RichTextBox text, ref TextBox command)
         {
             StartMenuTxt = File.ReadAllLines(@"..\..\Recursos\StartMenu.txt");
@@ -37,15 +39,17 @@ namespace Text_Venture.Clases
             isStart = true;
             BuferOutput = new Queue<string>();
             BuferInput = new Queue<string>();
-            commandDic = new Dictionary<string, ECommands>();
+            assembly = Assembly.GetExecutingAssembly();
+            //wait = new EventWaitHandle(false, EventResetMode.ManualReset);
+            //commandDic = new Dictionary<string, ECommands>();
         }
 
 
         private static void PrintOutput()
         {
-           foreach(string s in BuferOutput)
+            foreach (string s in BuferOutput)
             {
-                output.AppendText(s);
+                output.AppendText(s + '\n');
             }
             BuferOutput.Clear();
             output.SelectAll();
@@ -53,108 +57,121 @@ namespace Text_Venture.Clases
         }
         private static void PrintOutput(System.Drawing.Color color, params string[] substr)
         {
-            
+
             foreach (string s in BuferOutput)
             {
-                output.AppendText(s);
+                output.AppendText(s + '\n');
                 foreach (string str in substr)
                 {
-                    Regex rx = new Regex(str, RegexOptions.IgnoreCase);
+                    Regex rx = new Regex(@"(?:" + str + ")");
+                    if (rx.IsMatch(s))
+                    {
+                        output.Select(output.Find(str, output.TextLength - s.Length, RichTextBoxFinds.None), str.Length);
+                        output.SelectionColor = color;
+                    }
 
-                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index, substr.Length);
                 }
             }
             BuferOutput.Clear();
-            output.SelectionColor = color;
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
         private static void PrintOutput(Font font, params string[] substr)
         {
 
-            foreach (string s in BuferOutput)
+            foreach (string s in BuferOutput)   
             {
-                output.AppendText(s);
-                foreach (string str in substr)
-                {
-                    Regex rx = new Regex(str, RegexOptions.IgnoreCase);
+                output.AppendText(s + '\n');
+            }
+            foreach (string str in substr)
+            {
 
-                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index+1, substr.Length);
+                Regex rx = new Regex(@"(?:" + str + ")");
+                if (rx.IsMatch(output.Text))
+                {
+                    output.Select(output.Find(str, 0, RichTextBoxFinds.None), str.Length);
+                    output.SelectionFont = font;
                 }
+
 
             }
             BuferOutput.Clear();
-            output.SelectionFont = font;
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
         public static void ImprimirMenu()
         {
-            
+
             foreach (string s in StartMenuTxt)
             {
                 if (s.StartsWith("start:"))
                 {
-                    BuferOutput.Enqueue(s.Remove(0, 6)+ "\n");
+                    BuferOutput.Enqueue(s.Remove(0, 6));
                 }
             }
             PrintOutput(new Font("00 Starmap Truetype", 8), new string[] { "<<", ">>" });
         }
 
-        public void Interpretar()
+        public void Interpretar(string inp)
         {
+            foreach (string s in inp.Split(' '))
+                BuferInput.Enqueue(s);
+
             if (isStart)
             {
-                interpretarInStartup();
+                InitGameSequence(BuferInput.First());
+                BuferInput.Clear();
             }
             else
             {
                 interpretarInput();
             }
         }
-        public void interpretarInStartup()
-        {
-            foreach (string argument in input.Text.Split(' '))
-            {
-                BuferInput.Enqueue(argument);
-            }
 
-            if (initStep == 3)
-            {
-                Game.MC.player.name = input.Text.TrimEnd(' ');
-                initStep++;
-                InitGameSequence();
-            }
-            else
-            {
-                switch (input.Text.TrimEnd(' '))
-                {
-                    case "san antonio":
-                    case "new orleans":
-                    case "los angeles":
-                        InitGameSequence();
-                        break;
-                    case "help":
-                        DisplayHelp();
-                        break;
-                    case "start":
-                        output.Clear();
-                        InitGameSequence();
-                        break;
-                    case "quit":
-                    case "exit":
-                        Application.Exit();
-                        break;
-                    default:
-                        output.AppendText("No such command." + '\n');
-                        break;
-                }
+        //public void interpretarInStartup()
+        //{
+        //    foreach (string argument in input.Text.Split(' '))
+        //    {
+        //        BuferInput.Enqueue(argument);
+        //    }
 
-                output.SelectAll();
-                output.SelectionAlignment = HorizontalAlignment.Center;
-                input.ResetText();
-            }
-        }
+
+        //    if (initStep == 3)
+        //    {
+        //        Game.MC.player.name = input.Text.TrimEnd(' ');
+        //        initStep++;
+        //        InitGameSequence();
+        //    }
+        //    else
+        //    {
+        //        switch (BuferInput.First())
+        //        {
+        //            case "san antonio":
+        //            case "new orleans":
+        //            case "los angeles":
+        //                InitGameSequence();
+        //                break;
+        //            case "help":
+        //                DisplayHelp();
+        //                break;
+        //            case "start":
+        //                output.Clear();
+        //                InitGameSequence();
+        //                break;
+        //            case "quit":
+        //            case "exit":
+        //                Application.Exit();
+        //                break;
+        //            default:
+        //                output.AppendText("No such command." + '\n');
+        //                break;
+        //        }
+
+        //        output.SelectAll();
+        //        output.SelectionAlignment = HorizontalAlignment.Center;
+        //        input.ResetText();
+        //    }
+        //}
         public void interpretarInput()
         {
             //string[] command = input.Text.TrimEnd(' ').Split(' ');
@@ -169,9 +186,12 @@ namespace Text_Venture.Clases
                 DisplayHelp(); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[0]) || c.StartsWith(CommandsTxt[1]) || c.StartsWith(CommandsTxt[2]))
-                if (c.StartsWith(CommandsTxt[0])) {
-                    this.GoTo(c.Remove(0, (CommandsTxt[0].Length))); }
-                else if (c.StartsWith(CommandsTxt[1])) {
+                if (c.StartsWith(CommandsTxt[0]))
+                {
+                    this.GoTo(c.Remove(0, (CommandsTxt[0].Length)));
+                }
+                else if (c.StartsWith(CommandsTxt[1]))
+                {
                     this.GoTo(c.Remove(0, (CommandsTxt[1].Length)));
                 }
                 else
@@ -188,7 +208,7 @@ namespace Text_Venture.Clases
             }
             else if (c.StartsWith(CommandsTxt[10]))
             {
-               // this.take(c.Remove(0,CommandsTxt[10].Length)); Historial.Add(c);
+                // this.take(c.Remove(0,CommandsTxt[10].Length)); Historial.Add(c);
             }
             else if (c.StartsWith(CommandsTxt[11]))
             {
@@ -205,17 +225,22 @@ namespace Text_Venture.Clases
 
         private void PreExit()
         {
+        //    var sample = typeof(Commandos);
+        //    var metodo = sample.GetMethod();
+        //    metodo.Invoke(Game.MC.player, );
             File.WriteAllLines(@"..\..\Recursos\Historial.txt", Historial);
             input.Clear();
             Application.Exit();
 
         }
 
+        [Commandos("examine")]
         public void examine<T>(T item, ref RichTextBox consola)
         {
             throw new NotImplementedException();
         }
 
+        [Commandos("go to")]
         public void GoTo(string PlaceName)
         {
             Game.MC.player.GoTo(PlaceName);
@@ -223,41 +248,33 @@ namespace Text_Venture.Clases
             output.AppendText(Game.MC.locs[PlaceName].DESC + '\n');
         }
 
-
+        [Commandos("help")]
         private static void DisplayHelp()
         {
-            List<string> toOut = new List<string>();
-
             foreach (string s in StartMenuTxt)
             {
                 if (s.StartsWith("help:"))
                 {
-                    toOut.Add(s.Remove(0, 5));
+                    BuferOutput.Enqueue(s.Remove(0, 5));
                 }
             }
-            for (int i = 0; i < toOut.Count; i++)
-            {
-                output.AppendText(toOut[i] + '\n');
-            }
-            output.SelectAll();
-            output.SelectionAlignment = HorizontalAlignment.Center;
+            PrintOutput(Color.Red, new string[] {"abscond", "attack" });
+
         }
 
-        private void InitGameSequence()
+        private void InitGameSequence(string strin)
         {
-            switch (initStep)
+            switch (strin)
             {
-                case 1:
+                case "start":
                     foreach (string s in StartMenuTxt)
                     {
                         if (s.StartsWith("init1:"))
                         {
-                            output.AppendText(s.Remove(0, 6) + '\n');
+                            BuferOutput.Enqueue(s.Remove(0, 6));
                         }
                     }
-                    initStep++;
-                    break;
-                case 2:
+                    PrintOutput();
                     switch (input.Text)
                     {
                         case "los angeles":
@@ -284,14 +301,14 @@ namespace Text_Venture.Clases
                         }
                     }
                     initStep++;
-                    foreach(string s in BuferOutput)
+                    foreach (string s in BuferOutput)
                     {
                         output.AppendText(s);
                         BuferOutput.Dequeue();
-                        
+
                     }
                     break;
-                case 4:
+                case "a":
                     //ParaTestear
                     foreach (string s in StartMenuTxt)
                     {
@@ -307,10 +324,27 @@ namespace Text_Venture.Clases
                     isStart = false;
                     playGame();
                     break;
+
+
+
+                case "help":
+                    DisplayHelp();
+                    break;
+                case "quit":
+                case "exit":
+                    Application.Exit();
+                    break;
+                default:
+                    BuferOutput.Enqueue("Unknown Command.");
+                    PrintOutput();
+                    break;
             }
         }
 
-        private void playGame()
+
+
+
+    private void playGame()
         {
             string temp = "Your name is " + Game.MC.player.name.ToUpper() + ", you have heard rumors that the zombie outbreak has not affected Canada. You are currently in " + Game.MC.player.location.NAME.ToUpper() + " .\n\n";
             output.AppendText(temp);
@@ -327,7 +361,7 @@ namespace Text_Venture.Clases
             output.AppendText(Game.MC.player.location.onLook() + '\n');
         }
 
-        public void take<T>(T item) where T: Resource
+        public void take<T>(T item) where T : Resource
         {
             output.AppendText(item.ToDisplay(item.Size));
             Game.MC.player.take(item);

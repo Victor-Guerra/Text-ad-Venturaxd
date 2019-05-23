@@ -28,6 +28,7 @@ namespace Text_Venture.Clases
             Inventory.Add(new Medkit(EResourceSize.MEDIUM));
         }
 
+        [Commandos("go to")]
         public void GoTo(string PlaceName)
         {
             if(this.location != null)
@@ -51,31 +52,37 @@ namespace Text_Venture.Clases
             //        
         }
 
+        [Commandos("use")]
         public void use(Resource resource)
         {
         resource.onUse(resource.Value, ref Game.MC.player);
         }
 
+        [Commandos("examine")]
         public void examine<T>(T item, ref RichTextBox consola)
         {
             throw new NotImplementedException();
         }
         
+        [Commandos("look around")]
         public void look_around()
         {
             return;
         }
 
-        public void Attack(ref Character c, int accuracy)
+        [Commandos("attack")]
+        public new void Attack(ref Character c, int accuracy)
         {
             throw new NotImplementedException();
         }
 
-        public int AbscondChance(EDifficulty diff)
+        [Commandos("abscond")]
+        public new int AbscondChance(EDifficulty diff)
         {
             throw new NotImplementedException();
         }
 
+        [Commandos("take")]
         public void take<T>(T item)where T: Resource
         {
             item.onUse(item.Value, ref Game.MC.player);

@@ -26,10 +26,11 @@ namespace Text_Venture
             MC.Startup();
           
         }
-
+        
         private void BttnSubmit_Click(object sender, EventArgs e)
         {
-            MC.IOC.Interpretar();
+            MC.IOC.Interpretar(txtBxInput.Text);
+            
         }
 
         private void TxtBxInput_KeyPress(object sender, KeyPressEventArgs e)
