@@ -23,6 +23,8 @@ namespace Text_Venture.Clases
         private static string[] StartMenuTxt;
         private static string[] CommandsTxt;
         private static Queue<string> BuferOutput;
+        private static Queue<string> BuferInput;
+        private Dictionary<string, ECommands> commandDic;
         
         public ReadWrite(ref RichTextBox text, ref TextBox command)
         {
@@ -34,7 +36,8 @@ namespace Text_Venture.Clases
             initStep = 1;
             isStart = true;
             BuferOutput = new Queue<string>();
-            
+            BuferInput = new Queue<string>();
+            commandDic = new Dictionary<string, ECommands>();
         }
 
 
@@ -44,10 +47,11 @@ namespace Text_Venture.Clases
             {
                 output.AppendText(s);
             }
+            BuferOutput.Clear();
             output.SelectAll();
             output.SelectionAlignment = HorizontalAlignment.Center;
         }
-        private static void PrintOutput( System.Drawing.Color color, params string[] substr)
+        private static void PrintOutput(System.Drawing.Color color, params string[] substr)
         {
             
             foreach (string s in BuferOutput)
@@ -75,7 +79,7 @@ namespace Text_Venture.Clases
                 {
                     Regex rx = new Regex(str, RegexOptions.IgnoreCase);
 
-                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index, substr.Length);
+                    output.Select((output.TextLength - s.Length) + rx.Match(s).Index+1, substr.Length);
                 }
 
             }
@@ -96,8 +100,25 @@ namespace Text_Venture.Clases
             }
             PrintOutput(new Font("00 Starmap Truetype", 8), new string[] { "<<", ">>" });
         }
+
+        public void Interpretar()
+        {
+            if (isStart)
+            {
+                interpretarInStartup();
+            }
+            else
+            {
+                interpretarInput();
+            }
+        }
         public void interpretarInStartup()
         {
+            foreach (string argument in input.Text.Split(' '))
+            {
+                BuferInput.Enqueue(argument);
+            }
+
             if (initStep == 3)
             {
                 Game.MC.player.name = input.Text.TrimEnd(' ');

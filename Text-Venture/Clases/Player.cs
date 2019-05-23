@@ -11,9 +11,10 @@ namespace Text_Venture.Clases
     public class Player : Human, ICommands, ICombat
     {
         private StatusHandler status;
+        public StatusHandler Status {get => status; }
         public Location location;
         public int FoodLvl, HydrationLvl, ammo, gasoline;
-        private List<Medkit> medkitsLeft;
+        private List<Resource> Inventory;
         
         
 
@@ -22,8 +23,9 @@ namespace Text_Venture.Clases
             this.HealthPoints = 100;
             this.FoodLvl = 100;
             this.HydrationLvl = 100;
-            medkitsLeft = new List<Medkit>();
-            medkitsLeft.Add(new Medkit(EResourceSize.MEDIUM));
+            status = new StatusHandler(ref ammo,ref gasoline, ref FoodLvl, ref HydrationLvl, ref this.HealthPoints, ref this.location);
+            Inventory = new List<Resource>(10);
+            Inventory.Add(new Medkit(EResourceSize.MEDIUM));
         }
 
         public void GoTo(string PlaceName)
@@ -49,9 +51,9 @@ namespace Text_Venture.Clases
             //        
         }
 
-            public void use(Resource resource)
+        public void use(Resource resource)
         {
-            resource.onUse(resource.Value, ref Game.MC.player);
+        resource.onUse(resource.Value, ref Game.MC.player);
         }
 
         public void examine<T>(T item, ref RichTextBox consola)

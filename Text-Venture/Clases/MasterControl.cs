@@ -13,15 +13,14 @@ namespace Text_Venture.Clases
     {
         public static EDifficulty difficulty;
         public static PictureBox displayImg;
-        public static ListBox displayStatus;
+        public static RichTextBox displayStatus;
         public static RichTextBox consolaxd;
         public static TextBox input;
-        private int DayCount;
         public ReadWrite IOC;
         public Player player;
         public Dictionary<string,BigCity> locs;
 
-        public MasterControl(ref PictureBox picBx, ref ListBox lst, ref RichTextBox rtbx, ref TextBox nput)
+        public MasterControl(ref PictureBox picBx, ref RichTextBox lst, ref RichTextBox rtbx, ref TextBox nput)
         {
             displayImg = picBx;
             displayStatus = lst;
@@ -36,6 +35,7 @@ namespace Text_Venture.Clases
             Menu();
             LoadLocations();
             this.player = new Player("", 100, "It's you!", "");
+            player.Status.SetTextoBox(ref displayStatus);
         }
 
         private void Menu()

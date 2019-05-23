@@ -21,17 +21,15 @@ namespace Text_Venture
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            MC = new MasterControl(ref picBxPreview, ref lstBxStatus, ref rchTxtOut, ref txtBxInput);
+            txtBxInput.Focus();
+            MC = new MasterControl(ref picBxPreview, ref lstStatus, ref rchTxtOut, ref txtBxInput);
             MC.Startup();
           
         }
 
         private void BttnSubmit_Click(object sender, EventArgs e)
         {
-            if (MC.IOC.isStart)
-                MC.IOC.interpretarInStartup();
-            else
-                MC.IOC.interpretarInput();
+            MC.IOC.Interpretar();
         }
 
         private void TxtBxInput_KeyPress(object sender, KeyPressEventArgs e)

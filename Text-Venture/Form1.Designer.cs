@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.lstBxStatus = new System.Windows.Forms.ListBox();
             this.picBxPreview = new System.Windows.Forms.PictureBox();
             this.rchTxtOut = new System.Windows.Forms.RichTextBox();
             this.txtBxInput = new System.Windows.Forms.TextBox();
@@ -38,22 +37,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lstStatus = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBxPreview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstBxStatus
-            // 
-            this.lstBxStatus.Font = new System.Drawing.Font("00 Starmap Truetype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstBxStatus.FormattingEnabled = true;
-            this.lstBxStatus.ItemHeight = 14;
-            this.lstBxStatus.Location = new System.Drawing.Point(4, 17);
-            this.lstBxStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.lstBxStatus.Name = "lstBxStatus";
-            this.lstBxStatus.Size = new System.Drawing.Size(215, 284);
-            this.lstBxStatus.TabIndex = 0;
-            this.lstBxStatus.TabStop = false;
             // 
             // picBxPreview
             // 
@@ -124,7 +112,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lstBxStatus);
+            this.groupBox1.Controls.Add(this.lstStatus);
             this.groupBox1.Font = new System.Drawing.Font("00 Starmap Truetype", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(668, 6);
@@ -163,6 +151,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Command Input";
             // 
+            // lstStatus
+            // 
+            this.lstStatus.BackColor = System.Drawing.Color.Black;
+            this.lstStatus.ForeColor = System.Drawing.Color.White;
+            this.lstStatus.Location = new System.Drawing.Point(6, 15);
+            this.lstStatus.MaxLength = 30;
+            this.lstStatus.Name = "lstStatus";
+            this.lstStatus.ReadOnly = true;
+            this.lstStatus.Size = new System.Drawing.Size(212, 305);
+            this.lstStatus.TabIndex = 0;
+            this.lstStatus.TabStop = false;
+            this.lstStatus.Text = "";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,8 +192,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstBxStatus;
         private System.Windows.Forms.PictureBox picBxPreview;
         private System.Windows.Forms.RichTextBox rchTxtOut;
         private System.Windows.Forms.TextBox txtBxInput;
@@ -201,6 +200,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RichTextBox lstStatus;
     }
 }
 

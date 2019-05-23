@@ -17,4 +17,6 @@ namespace Text_Venture
         public enum EResourceSize {SMALL = 1, MEDIUM, LARGE };
 
         public enum ENoisy {SILENT, AUDIBLE, LOUD};
+        
+        public enum ECommands { Help, Start, Quit,   }
 }

@@ -15,7 +15,7 @@ namespace Text_Venture.Clases
 
     interface IStatus
     {
-        void UpdateStatus(int ammo, int gas, int hunger, int thirst, int hp, ref System.Windows.Forms.RichTextBox consola);
+        void UpdateStatus();
         void CheckAlive(ref bool isAlive);
     }
 
